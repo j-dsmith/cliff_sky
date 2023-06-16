@@ -2,8 +2,8 @@ import { Unbounded } from "next/font/google";
 import clsx from "clsx";
 import { AnimationControls, motion } from "framer-motion";
 import { btnTextVariants } from "./variants";
+import FlyInText from "@/components/UI/FlyInText";
 
-// Google Font
 const unbounded = Unbounded({ subsets: ["latin"] });
 
 type Props = {
@@ -16,24 +16,23 @@ const MobileMenuBtn = ({ handleClick, controls }: Props) => {
     <button
       role="button"
       className={clsx(
-        ["text-xl", "h-4/5", "relative", "z-50"],
+        ["text-xl", "h-4/5", "relative", "z-100"],
         unbounded.className
       )}
       onClick={handleClick}
     >
-      <div className="h-full overflow-hidden">
-        <motion.p
-          className="relative"
+      <motion.div
+        initial="initial"
+        animate={controls}
+        className="h-full overflow-hidden"
+      >
+        <FlyInText
+          text="Menu"
+          secondaryText="Close"
           variants={btnTextVariants}
-          animate={controls}
-          initial="initial"
-        >
-          Menu
-          <motion.span className="absolute -bottom-full left-0">
-            Close
-          </motion.span>
-        </motion.p>
-      </div>
+          className="relative z-100 h-4/5 text-xl"
+        />
+      </motion.div>
     </button>
   );
 };

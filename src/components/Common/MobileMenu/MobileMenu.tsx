@@ -1,23 +1,33 @@
 "use client";
-
-import { useState } from "react";
 import MenuOverlay from "./MenuOverlay";
 import MobileMenuBtn from "./MobileMenuBtn";
-import { useAnimationControls } from "framer-motion";
+import { useAnimationControls, useCycle } from "framer-motion";
+import { usePageHeight } from "@/hooks/usePageHeight";
+
+export enum VariantNames {
+  Open = "open",
+  Closed = "closed",
+  Initial = "initial",
+}
 
 const MobileMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, cycleIsOpen] = useCycle(
+    VariantNames.Open,
+    VariantNames.Closed
+  );
+  const pageHeight = usePageHeight();
   const controls = useAnimationControls();
 
   const handleClick = () => {
-    controls.start(isOpen ? "closed" : "open");
-    setIsOpen((curVal) => !curVal);
+    document.body.classList.toggle("fixed");
+    controls.start(isOpen);
+    cycleIsOpen();
   };
 
   return (
     <div className="flex h-full items-baseline">
       <MobileMenuBtn handleClick={handleClick} controls={controls} />
-      <MenuOverlay controls={controls} />
+      <MenuOverlay controls={controls} pageHeight={pageHeight} />
     </div>
   );
 };

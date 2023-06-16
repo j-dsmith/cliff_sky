@@ -1,9 +1,13 @@
-import Header from "@/components/Common/Header/Header";
 import "./globals.css";
+import Header from "@/components/Common/Header/Header";
+import clsx from "clsx";
 import { Inter, Montserrat, Unbounded } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={clsx(["bg-body-light"], montserrat.className)}>
         <div className="px-4">
           <Header />
           {children}
