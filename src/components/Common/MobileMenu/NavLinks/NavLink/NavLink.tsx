@@ -20,12 +20,7 @@ const NavLink = ({ text, custom }: Props) => {
   return (
     <li>
       <Link href="#">
-        <FlyInText
-          variants={textVariants}
-          className={linkClass}
-          text={text}
-          // custom={custom}
-        />
+        <FlyInText variants={textVariants} className={linkClass} text={text} />
       </Link>
     </li>
   );

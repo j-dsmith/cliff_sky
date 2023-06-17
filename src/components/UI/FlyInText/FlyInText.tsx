@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { AnimationControls, Variants, motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 type Props = {
   text: string;

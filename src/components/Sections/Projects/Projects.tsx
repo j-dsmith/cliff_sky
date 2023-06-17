@@ -1,7 +1,11 @@
+import ProjectCard from "./ProjectCard";
+import ProjectsHeader from "./ProjectsHeader/ProjectsHeader";
+
 const Projects = () => {
   return (
-    <section>
-      <h2 className="text-5xl font-semibold uppercase">Selected Projects</h2>
+    <section className="w-full pt-12">
+      <ProjectsHeader />
+      <ProjectCard />
     </section>
   );
 };

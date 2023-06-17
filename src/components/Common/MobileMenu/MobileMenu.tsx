@@ -15,11 +15,12 @@ const MobileMenu = () => {
     VariantNames.Open,
     VariantNames.Closed
   );
+
   const pageHeight = usePageHeight();
   const controls = useAnimationControls();
 
   const handleClick = () => {
-    document.body.classList.toggle("fixed");
+    document.body.classList.toggle("overflow-hidden");
     controls.start(isOpen);
     cycleIsOpen();
   };
@@ -27,7 +28,7 @@ const MobileMenu = () => {
   return (
     <div className="flex h-full items-baseline">
       <MobileMenuBtn handleClick={handleClick} controls={controls} />
-      <MenuOverlay controls={controls} pageHeight={pageHeight} />
+      <MenuOverlay controls={controls} pageHeight={pageHeight ?? 0} />
     </div>
   );
 };

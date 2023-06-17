@@ -1,0 +1,33 @@
+import { Variants } from "framer-motion";
+
+export enum VariantNames {
+  Initial = "initial",
+  Animate = "animate",
+}
+
+const transition = {
+  type: "spring",
+  stiffness: 200,
+  damping: 45,
+  bounce: 0.3,
+};
+
+export const headerContainerVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const headerTextVariants: Variants = {
+  initial: {
+    y: "100%",
+    transition,
+  },
+  animate: {
+    y: 0,
+    transition,
+  },
+};

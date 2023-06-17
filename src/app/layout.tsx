@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(["bg-body-light"], montserrat.className)}>
-        <div className="px-4">
+        <div className="">
           <Header />
           {children}
         </div>
