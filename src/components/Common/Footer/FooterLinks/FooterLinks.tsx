@@ -9,7 +9,7 @@ import { useRef } from "react";
 
 const FooterLinks = () => {
   const ref = useRef<HTMLUListElement>(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { amount: 0.3, once: true });
 
   const renderContactLinks = (): JSX.Element[] => {
     return contactLinks.map(({ href, label }, idx) => (

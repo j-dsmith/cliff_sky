@@ -9,7 +9,6 @@ const transition = {
   type: "spring",
   stiffness: 200,
   damping: 45,
-  bounce: 0.3,
 };
 
 export const headerContainerVariants: Variants = {
