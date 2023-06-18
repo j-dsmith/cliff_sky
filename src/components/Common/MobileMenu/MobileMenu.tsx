@@ -3,12 +3,7 @@ import MenuOverlay from "./MenuOverlay";
 import MobileMenuBtn from "./MobileMenuBtn";
 import { useAnimationControls, useCycle } from "framer-motion";
 import { usePageHeight } from "@/hooks/usePageHeight";
-
-export enum VariantNames {
-  Open = "open",
-  Closed = "closed",
-  Initial = "initial",
-}
+import { VariantNames } from "./variants";
 
 const MobileMenu = () => {
   const [isOpen, cycleIsOpen] = useCycle(
