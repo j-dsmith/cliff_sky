@@ -1,11 +1,12 @@
 import { Variants } from "framer-motion";
+import { VariantNames } from "../variants";
 
 const CIRCLE_POSITION = "calc(100% - 23px) 59px";
 export const menuOverlayVariants: Variants = {
-  initial: {
+  [VariantNames.Initial]: {
     clipPath: `circle(0px at ${CIRCLE_POSITION})`,
   },
-  closed: {
+  [VariantNames.Closed]: {
     clipPath: `circle(0px at ${CIRCLE_POSITION})`,
     transition: {
       delay: 0.2,
@@ -14,12 +15,12 @@ export const menuOverlayVariants: Variants = {
       damping: 40,
     },
   },
-  open: (height = 1000) => ({
-    clipPath: `circle(${height + 150}px at ${CIRCLE_POSITION}`,
+  [VariantNames.Open]: (height = 1000) => ({
+    clipPath: `circle(${height * 2}px at ${CIRCLE_POSITION}`,
     transition: {
       type: "spring",
-      damping: 40,
-      stiffness: 175,
+      damping: 30,
+      stiffness: 40,
     },
   }),
 };

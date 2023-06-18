@@ -1,9 +1,5 @@
 import { Variants } from "framer-motion";
-
-export enum VariantNames {
-  Initial = "initial",
-  Animate = "animate",
-}
+import { VariantNames } from "../variants";
 
 const transition = {
   type: "spring",
@@ -13,8 +9,8 @@ const transition = {
 };
 
 export const headerContainerVariants: Variants = {
-  initial: {},
-  animate: {
+  [VariantNames.Initial]: {},
+  [VariantNames.Animate]: {
     transition: {
       staggerChildren: 0.1,
     },
@@ -22,11 +18,11 @@ export const headerContainerVariants: Variants = {
 };
 
 export const headerTextVariants: Variants = {
-  initial: {
+  [VariantNames.Initial]: {
     y: "100%",
     transition,
   },
-  animate: {
+  [VariantNames.Animate]: {
     y: 0,
     transition,
   },

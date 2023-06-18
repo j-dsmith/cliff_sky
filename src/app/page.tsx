@@ -2,10 +2,13 @@ import Hero from "@/components/Sections/Hero/Hero";
 import Projects from "@/components/Sections/Projects/Projects";
 import clsx from "clsx";
 import { Unbounded } from "next/font/google";
+import { getProjects } from "../../sanity/lib/queries/projects";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <main className="">
       <Hero />
@@ -24,7 +27,7 @@ export default function Home() {
       >
         Art and Design by Carey deVictoria-Michel
       </h2>
-      <Projects />
+      <Projects projects={projects} />
     </main>
   );
 }

@@ -1,13 +1,14 @@
 import { Variants } from "framer-motion";
+import { VariantNames } from "../variants";
 
 export const listVariants: Variants = {
-  open: {
+  [VariantNames.Open]: {
     transition: {
       staggerChildren: 0.07,
       delayChildren: 0.2,
     },
   },
-  closed: {
+  [VariantNames.Closed]: {
     transition: {
       staggerChildren: 0.05,
       staggerDirection: -1,
@@ -16,16 +17,16 @@ export const listVariants: Variants = {
 };
 
 export const navVariants: Variants = {
-  initial: {
+  [VariantNames.Initial]: {
     display: "none",
   },
-  open: {
+  [VariantNames.Open]: {
     display: "block",
     transition: {
       when: "beforeChildren",
     },
   },
-  closed: {
+  [VariantNames.Closed]: {
     display: "none",
     transition: {
       delay: 0.5,

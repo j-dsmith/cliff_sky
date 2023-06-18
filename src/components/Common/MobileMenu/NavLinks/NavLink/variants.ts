@@ -1,10 +1,11 @@
 import { Variants } from "framer-motion";
+import { VariantNames } from "../../variants";
 
 export const textVariants: Variants = {
-  initial: {
+  [VariantNames.Initial]: {
     y: "100%",
   },
-  open: (delay: number) => ({
+  [VariantNames.Open]: {
     y: 0,
     transition: {
       type: "spring",
@@ -12,8 +13,8 @@ export const textVariants: Variants = {
       damping: 15,
       bounce: 0.15,
     },
-  }),
-  closed: {
+  },
+  [VariantNames.Closed]: {
     y: "100%",
     transition: {
       type: "spring",

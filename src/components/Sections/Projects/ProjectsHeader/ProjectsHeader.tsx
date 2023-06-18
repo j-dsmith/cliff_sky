@@ -1,14 +1,11 @@
 "use client";
 import FlyInText from "@/components/UI/FlyInText";
 import clsx from "clsx";
-import {
-  VariantNames,
-  headerContainerVariants,
-  headerTextVariants,
-} from "./variants";
+import { headerContainerVariants, headerTextVariants } from "./variants";
 import { Unbounded } from "next/font/google";
 import { useRef } from "react";
-import { motion, useAnimationControls, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { VariantNames } from "../variants";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 

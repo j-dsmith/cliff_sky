@@ -1,4 +1,5 @@
 import { Variants } from "framer-motion";
+import { VariantNames } from "../variants";
 
 const transition = {
   type: "spring",
@@ -8,11 +9,11 @@ const transition = {
 };
 
 export const btnTextVariants: Variants = {
-  open: {
+  [VariantNames.Open]: {
     y: "-100%",
     transition,
   },
-  closed: {
+  [VariantNames.Closed]: {
     y: 0,
     transition,
   },
