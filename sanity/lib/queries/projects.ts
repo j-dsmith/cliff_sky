@@ -1,29 +1,30 @@
 import {
-  makeSafeQueryRunner,
   q,
   sanityImage,
   type TypeFromSelection,
   type Selection,
   InferType,
 } from "groqd";
-import { client } from "../client";
 import { ArrayElementType } from "@/types/ArrayElementType";
+import { runQuery } from "./helpers";
 
 /**
- * A safe query runner that executes a given query using the Sanity client's fetch method.
- * @param query - The query to execute.
- * @returns The result of the executed query.
+ * Represents a selection of fields for a project.
+ * @property {string} title - The title of the project.
+ * @property {Array<ContentBlock>} description - The description of the project, represented as an array of content blocks.
+ * @property {string} _id - The ID of the project.
+ * @property {ProjectImages} images - The images associated with the project, represented as an array of project images.
  */
-const runQuery = makeSafeQueryRunner((query) => client.fetch(query));
-
 const projectSelection = {
   title: q.string(),
   description: q.array(q.contentBlock()),
-
   _id: q.string(),
   images: sanityImage("images", { isList: true }),
 } satisfies Selection;
 
+/**
+ * Represents a query that retrieves all projects.
+ */
 const projectsQuery = q("*", { isArray: true })
   .filterByType("project")
   .grab$(projectSelection);
