@@ -1,3 +1,4 @@
+import Footer from "@/components/Common/Footer";
 import "./globals.css";
 import Header from "@/components/Common/Header/Header";
 import clsx from "clsx";
@@ -25,6 +26,7 @@ export default function RootLayout({
         <div className="">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

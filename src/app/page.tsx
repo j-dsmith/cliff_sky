@@ -4,11 +4,13 @@ import clsx from "clsx";
 import { Unbounded } from "next/font/google";
 import { getProjects } from "../../sanity/lib/queries/projects";
 import About from "@/components/Sections/About";
+import { getBio } from "../../sanity/lib/queries/bio";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 
 export default async function Home() {
   const projects = await getProjects();
+  const bio = await getBio();
 
   return (
     <main className="">
@@ -29,7 +31,7 @@ export default async function Home() {
         Art and Design by Carey deVictoria-Michel
       </h2>
       <Projects projects={projects} />
-      <About />
+      <About bio={bio} />
     </main>
   );
 }

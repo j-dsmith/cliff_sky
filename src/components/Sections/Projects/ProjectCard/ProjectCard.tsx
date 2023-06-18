@@ -1,26 +1,21 @@
 "use client";
+import { motion } from "framer-motion";
+import { PortableText } from "@portabletext/react";
 import HorizontalScrollContainer from "@/components/UI/HorizontalScrollContainer";
 import { Project } from "@/../sanity/lib/queries/projects";
-
 import ProjectThumbnails from "./ProjectThumbnails";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { projectCardVariants } from "./variants";
 import { VariantNames } from "../variants";
-import { PortableText } from "@portabletext/react";
 
 type Props = {
   project: Project;
 };
 
 const ProjectCard = ({ project }: Props) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const inView = useInView(containerRef, { amount: 0.3, once: true });
-
   return (
     <motion.article
-      ref={containerRef}
-      animate={inView && VariantNames.Animate}
+      whileInView={VariantNames.Animate}
+      viewport={{ amount: 0.3, once: true }}
       variants={projectCardVariants}
       initial={VariantNames.Initial}
       className="w-full"

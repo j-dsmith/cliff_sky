@@ -5,7 +5,6 @@ const transition = {
   type: "spring",
   stiffness: 200,
   damping: 14,
-  bounce: 0.3,
 };
 
 export const btnTextVariants: Variants = {

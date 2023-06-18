@@ -1,6 +1,5 @@
 import { Projects } from "@/../sanity/lib/queries/projects";
 import ProjectCard from "./ProjectCard";
-import ProjectsHeader from "./ProjectsHeader/ProjectsHeader";
 import SectionHeader from "@/components/UI/SectionHeader/SectionHeader";
 
 type Props = {
@@ -15,8 +14,11 @@ const Projects = ({ projects }: Props) => {
   };
 
   return (
-    <section className="pt-12">
-      <SectionHeader textSegments={{ top: "Selected", bottom: "Projects" }} />
+    <section className="pb-20 pt-12">
+      <SectionHeader
+        textSegments={{ top: "Selected", bottom: "Projects" }}
+        className="px-4"
+      />
       {renderProjects()}
     </section>
   );
