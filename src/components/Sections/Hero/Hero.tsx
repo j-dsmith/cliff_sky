@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 const Hero = () => {
   return (
-    <section className="flex h-[calc(100vh-80px)] w-full flex-col gap-6 px-4 pb-4 pt-20">
+    <section className="flex h-[calc(100vh-80px)] flex-col gap-6 px-4 pb-4 pt-20">
       <HeroBanner />
       <HeroImg />
     </section>

@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import { Unbounded } from "next/font/google";
 
-const unbounded = Unbounded({ subsets: ["latin"], weight: ["400"] });
+const unbounded = Unbounded({ subsets: ["latin"], weight: ["200", "500"] });
 
 const HeroBanner = () => {
-  const h1Class = clsx(["text-8xl"], unbounded.className);
+  const h1BaseClass = clsx(["text-8xl"], unbounded.className);
   return (
-    <div className="">
-      <h1 className={h1Class}>Cliff</h1>
-      <h1 className={h1Class}>& Sky</h1>
+    <div className={h1BaseClass}>
+      <h1 className="font-medium">Cliff</h1>
+      <h1 className="font-extralight">& Sky</h1>
     </div>
   );
 };
