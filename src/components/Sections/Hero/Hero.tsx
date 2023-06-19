@@ -1,13 +1,12 @@
-import { Unbounded } from "next/font/google";
 import HeroBanner from "./HeroBanner/HeroBanner";
-import HeroImg from "./HeroImg/HeroImg";
-import clsx from "clsx";
+import heroImg from "@/../public/images/joshua-tree-hero.png";
+import ImageBanner from "@/components/UI/ImageBanner/ImageBanner";
 
 const Hero = () => {
   return (
     <section className="flex h-[calc(100vh-80px)] flex-col gap-6 px-4 pb-4 pt-20">
       <HeroBanner />
-      <HeroImg />
+      <ImageBanner src={heroImg} className="h-full" />
     </section>
   );
 };

@@ -4,19 +4,15 @@ import { Unbounded } from "next/font/google";
 import Link from "next/link";
 import { textVariants } from "./variants";
 
-const unbounded = Unbounded({ subsets: ["latin"], weight: "300" });
+const unbounded = Unbounded({ subsets: ["latin"], weight: ["400"] });
 
 type Props = {
   text: string;
-  custom?: number;
 };
 
-const linkClass = clsx(
-  ["text-6xl", "font-semibold", "capitalize"],
-  unbounded.className
-);
+const linkClass = clsx(["text-6xl", "capitalize"], unbounded.className);
 
-const NavLink = ({ text, custom }: Props) => {
+const NavLink = ({ text }: Props) => {
   return (
     <li>
       <Link href="#">
