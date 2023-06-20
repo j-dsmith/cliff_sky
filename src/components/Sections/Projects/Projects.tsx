@@ -1,6 +1,8 @@
 import { Projects } from "@/../sanity/lib/queries/projects";
 import ProjectCard from "./ProjectCard";
 import SectionHeader from "@/components/UI/SectionHeader/SectionHeader";
+import LinkArrowBtn from "@/components/UI/LinkArrowBtn";
+import Spacer from "@/components/UI/Spacer/Spacer";
 
 type Props = {
   projects: Projects;
@@ -20,6 +22,10 @@ const Projects = ({ projects }: Props) => {
         className="px-4"
       />
       {renderProjects()}
+      <Spacer height="h-20" />
+      <div className="flex justify-center">
+        <LinkArrowBtn href="#" label="Full Design CV" size="base" />
+      </div>
     </section>
   );
 };
