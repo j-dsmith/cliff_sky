@@ -11,10 +11,10 @@ const HeroBanner = () => {
   return (
     <h1 className={h1BaseClass}>
       <div className="font-medium">
-        <StaggeredText text="Cliff" variants={variantProps} />
+        <StaggeredText text="Cliff" variants={variantProps} delay={10} />
       </div>
       <div className="font-extralight leading-[1.1]">
-        <StaggeredText text="& Sky" variants={variantProps} delay={2} />
+        <StaggeredText text="& Sky" variants={variantProps} delay={12} />
       </div>
     </h1>
   );

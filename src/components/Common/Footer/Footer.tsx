@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/UI/SectionHeader/SectionHeader";
+import SectionHeader from "@/components/UI/SectionHeader";
 import FooterLinks from "./FooterLinks/FooterLinks";
 
 const Footer = () => {

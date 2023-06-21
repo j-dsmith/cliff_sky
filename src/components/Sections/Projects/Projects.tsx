@@ -1,6 +1,6 @@
 import { Projects } from "@/../sanity/lib/queries/projects";
 import ProjectCard from "./ProjectCard";
-import SectionHeader from "@/components/UI/SectionHeader/SectionHeader";
+import SectionHeader from "@/components/UI/SectionHeader";
 import LinkArrowBtn from "@/components/UI/LinkArrowBtn";
 import Spacer from "@/components/UI/Spacer/Spacer";
 

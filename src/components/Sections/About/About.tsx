@@ -1,8 +1,8 @@
-import SectionHeader from "@/components/UI/SectionHeader/SectionHeader";
+import SectionHeader from "@/components/UI/SectionHeader";
 import { Bio } from "@/../sanity/lib/queries/bio";
 import AboutContent from "./AboutContent";
 import aboutImg from "@/../public/images/about.png";
-import ImageBanner from "@/components/UI/ImageBanner/ImageBanner";
+import ImageBanner from "@/components/UI/ImageBanner";
 import Spacer from "@/components/UI/Spacer/Spacer";
 
 type Props = {

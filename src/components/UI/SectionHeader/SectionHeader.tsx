@@ -17,6 +17,7 @@ const SectionHeader = ({ textSegments, className }: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
+      layout
       viewport={{ once: true, amount: 0.3 }}
       initial={VariantNames.Initial}
       variants={headerContainerVariants}

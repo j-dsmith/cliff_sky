@@ -17,6 +17,7 @@ const MenuOverlay = ({ controls, pageHeight }: Props) => {
         className="absolute bottom-0 right-0 top-0 z-90 w-full bg-orange-500 p-4"
         variants={menuOverlayVariants}
         animate={controls}
+        layout
         custom={pageHeight}
         initial="initial"
       >

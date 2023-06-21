@@ -28,6 +28,7 @@ const StaggeredText = (props: Props) => {
       return (
         <motion.span
           key={`${char}:${index}`}
+          layout
           variants={props.variants.charVariants}
           className="relative inline-block"
         >
@@ -39,6 +40,7 @@ const StaggeredText = (props: Props) => {
 
   return (
     <motion.div
+      layout
       custom={props.delay ?? 0}
       initial={VariantNames.Initial}
       animate={VariantNames.Animate}

@@ -15,6 +15,7 @@ const FooterLinks = () => {
     return contactLinks.map(({ href, label }, idx) => (
       <motion.li
         key={label}
+        layout
         animate={inView && VariantNames.Animate}
         initial={VariantNames.Initial}
         whileHover={VariantNames.Hover}

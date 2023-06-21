@@ -1,6 +1,6 @@
 import HeroBanner from "./HeroBanner/HeroBanner";
 import heroImg from "@/../public/images/joshua-tree-hero.png";
-import ImageBanner from "@/components/UI/ImageBanner/ImageBanner";
+import ImageBanner from "@/components/UI/ImageBanner";
 
 const Hero = () => {
   return (

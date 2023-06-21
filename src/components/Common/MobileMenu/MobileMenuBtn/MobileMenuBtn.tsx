@@ -24,6 +24,7 @@ const MobileMenuBtn = ({ handleClick, controls }: Props) => {
       <motion.div
         initial="initial"
         animate={controls}
+        layout
         className="h-full overflow-hidden"
       >
         <FlyInText
