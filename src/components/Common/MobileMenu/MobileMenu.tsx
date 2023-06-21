@@ -3,7 +3,7 @@ import MenuOverlay from "./MenuOverlay";
 import MobileMenuBtn from "./MobileMenuBtn";
 import { useAnimationControls, useCycle } from "framer-motion";
 import { usePageHeight } from "@/hooks/usePageHeight";
-import { VariantNames } from "./variants";
+import { VariantNames } from "@/types/VariantNames";
 
 const MobileMenu = () => {
   const [isOpen, cycleIsOpen] = useCycle(

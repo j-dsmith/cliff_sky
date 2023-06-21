@@ -3,9 +3,8 @@ import FlyInText from "@/components/UI/FlyInText";
 import clsx from "clsx";
 import { headerContainerVariants, headerTextVariants } from "./variants";
 import { Unbounded } from "next/font/google";
-
 import { motion } from "framer-motion";
-import { VariantNames } from "./variants";
+import { VariantNames } from "@/types/VariantNames";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300", "700"] });
 

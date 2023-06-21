@@ -1,11 +1,11 @@
 "use client";
 import { contactLinks } from "@/data/contactLinks";
-import { VariantNames } from "../variants";
-import { linkVariants, listItemVariants, listVariants } from "./variants";
+import { linkVariants, listItemVariants } from "./variants";
 import FlyInText from "@/components/UI/FlyInText";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
+import { VariantNames } from "@/types/VariantNames";
 
 const FooterLinks = () => {
   const ref = useRef<HTMLUListElement>(null);

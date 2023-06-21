@@ -9,7 +9,6 @@ import { Variants, motion } from "framer-motion";
  * @param custom - Custom prop to be used for animation
  * @param className - Classname to be applied to main text
  * @param secondaryClassName - Classname to be applied to secondary text
- * @param whileHover - Variants to be used for hover animation
  */
 type Props = {
   text: string;

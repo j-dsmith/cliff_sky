@@ -2,7 +2,8 @@
 import { PortableText } from "@portabletext/react";
 import { motion } from "framer-motion";
 import { Bio } from "@/../sanity/lib/queries/bio";
-import { VariantNames, bioContentVariants } from "./variants";
+import { bioContentVariants } from "./variants";
+import { VariantNames } from "@/types/VariantNames";
 
 type Props = {
   bio: Bio;

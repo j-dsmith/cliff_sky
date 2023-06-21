@@ -1,9 +1,5 @@
+import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
-
-export enum VariantNames {
-  Initial = "initial",
-  Animate = "animate",
-}
 
 export const bioContentVariants: Variants = {
   [VariantNames.Initial]: {

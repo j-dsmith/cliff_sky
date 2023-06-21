@@ -1,9 +1,5 @@
+import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
-
-export enum VariantNames {
-  Initial = "initial",
-  Animate = "animate",
-}
 
 const transition = {
   type: "spring",

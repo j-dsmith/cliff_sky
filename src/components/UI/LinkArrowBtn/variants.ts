@@ -1,9 +1,5 @@
+import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
-
-export enum VariantNames {
-  Initial = "initial",
-  Hover = "hover",
-}
 
 export const btnVariants: Variants = {
   [VariantNames.Initial]: {},

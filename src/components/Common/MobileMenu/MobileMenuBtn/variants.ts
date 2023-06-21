@@ -1,5 +1,5 @@
+import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
-import { VariantNames } from "../variants";
 
 const transition = {
   type: "spring",

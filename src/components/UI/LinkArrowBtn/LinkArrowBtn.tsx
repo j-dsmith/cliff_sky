@@ -10,10 +10,10 @@ import {
   iconContainerVariants,
   iconVariants,
   labelVariants,
-  VariantNames,
 } from "./variants";
 import { useState } from "react";
 import FlyInText from "../FlyInText/FlyInText";
+import { VariantNames } from "@/types/VariantNames";
 
 type ComponentProps = {
   href: string;

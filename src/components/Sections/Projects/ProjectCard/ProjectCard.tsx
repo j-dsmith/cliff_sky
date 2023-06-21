@@ -5,7 +5,7 @@ import HorizontalScrollContainer from "@/components/UI/HorizontalScrollContainer
 import { Project } from "@/../sanity/lib/queries/projects";
 import ProjectThumbnails from "./ProjectThumbnails";
 import { projectCardVariants } from "./variants";
-import { VariantNames } from "../variants";
+import { VariantNames } from "@/types/VariantNames";
 
 type Props = {
   project: Project;

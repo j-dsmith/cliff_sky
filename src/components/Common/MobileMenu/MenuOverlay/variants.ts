@@ -1,5 +1,5 @@
+import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
-import { VariantNames } from "../variants";
 
 const CIRCLE_POSITION = "calc(100% - 23px) 59px";
 export const menuOverlayVariants: Variants = {
