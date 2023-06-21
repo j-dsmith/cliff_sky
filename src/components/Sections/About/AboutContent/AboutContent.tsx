@@ -12,7 +12,7 @@ const AboutContent = ({ bio }: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 1 }}
       initial={VariantNames.Initial}
       variants={bioContentVariants}
     >

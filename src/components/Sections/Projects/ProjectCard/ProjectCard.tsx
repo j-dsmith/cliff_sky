@@ -15,7 +15,7 @@ const ProjectCard = ({ project }: Props) => {
   return (
     <motion.article
       whileInView={VariantNames.Animate}
-      viewport={{ amount: 0.3, once: true }}
+      viewport={{ amount: 1, once: true }}
       variants={projectCardVariants}
       initial={VariantNames.Initial}
       className="w-full"
@@ -24,6 +24,7 @@ const ProjectCard = ({ project }: Props) => {
         <ProjectThumbnails images={project.images} />
       </HorizontalScrollContainer>
 
+      {/* TODO: Animate content */}
       <div className="px-4">
         <h3 className="mt-6 text-3xl">{project.title}</h3>
         <PortableText value={project.description} />

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="flex h-[calc(100vh-80px)] flex-col gap-6 px-4 pb-4 pt-20">
       <HeroBanner />
-      <ImageBanner src={heroImg} className="h-full" />
+      <ImageBanner priority={true} src={heroImg} className="h-full" />
     </section>
   );
 };

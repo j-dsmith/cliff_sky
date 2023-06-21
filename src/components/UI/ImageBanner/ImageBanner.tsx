@@ -8,13 +8,14 @@ import { VariantNames } from "@/types/VariantNames";
 type Props = {
   src: StaticImageData;
   className?: string;
+  priority?: boolean;
 };
 
-const ImageBanner = ({ src, className }: Props) => {
+const ImageBanner = ({ src, className, priority }: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 1 }}
       initial={VariantNames.Initial}
       variants={imgBannerVariants}
       className={clsx(
@@ -22,7 +23,13 @@ const ImageBanner = ({ src, className }: Props) => {
         className
       )}
     >
-      <Image src={src} fill alt="hero" className="object-cover" />
+      <Image
+        src={src}
+        fill
+        priority={priority}
+        alt="hero"
+        className="object-cover"
+      />
     </motion.div>
   );
 };
