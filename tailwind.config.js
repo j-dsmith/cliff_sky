@@ -22,6 +22,12 @@ module.exports = {
       colors: {
         "body-light": "hsl(44deg 60% 95.1%)",
       },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fit, minmax(300px, 1fr))",
+      },
+      maxWidth: {
+        "8xl": "90rem",
+      },
     },
   },
   plugins: [],

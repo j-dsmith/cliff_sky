@@ -3,7 +3,7 @@ import FooterLinks from "./FooterLinks/FooterLinks";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col px-4 pb-6 pt-12">
+    <footer className="flex flex-none flex-col px-4 pb-6 pt-12">
       <SectionHeader textSegments={{ top: "Idea?", bottom: "Contact" }} />
       <FooterLinks />
       <p className="pt-12 text-center text-sm text-stone-600">

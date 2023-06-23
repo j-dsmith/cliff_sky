@@ -23,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(["bg-body-light"], montserrat.className)}>
-        <div className="">
+        <div className="flex h-full flex-col">
           <Header />
-          {children}
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

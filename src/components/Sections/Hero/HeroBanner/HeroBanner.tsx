@@ -6,15 +6,29 @@ import { variantProps } from "./variants";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["200", "500"] });
 
-const HeroBanner = () => {
+type Props = {
+  textSegments: {
+    top: string;
+    bottom: string;
+  };
+};
+const HeroBanner = ({ textSegments }: Props) => {
   const h1BaseClass = clsx("text-8xl", unbounded.className);
   return (
     <h1 className={h1BaseClass}>
       <div className="font-medium">
-        <StaggeredText text="Cliff" variants={variantProps} delay={10} />
+        <StaggeredText
+          text={textSegments.top}
+          variants={variantProps}
+          delay={10}
+        />
       </div>
       <div className="font-extralight leading-[1.1]">
-        <StaggeredText text="& Sky" variants={variantProps} delay={12} />
+        <StaggeredText
+          text={textSegments.bottom}
+          variants={variantProps}
+          delay={12}
+        />
       </div>
     </h1>
   );

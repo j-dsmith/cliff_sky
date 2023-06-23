@@ -13,7 +13,7 @@ export default async function Home() {
   const bio = await getBio();
 
   return (
-    <main className="">
+    <>
       <Hero />
       <h2
         className={clsx(
@@ -32,6 +32,6 @@ export default async function Home() {
       </h2>
       <Projects projects={projects} />
       <About bio={bio} />
-    </main>
+    </>
   );
 }

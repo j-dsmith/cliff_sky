@@ -8,7 +8,7 @@ const unbounded = Unbounded({ subsets: ["latin"] });
 
 const Header = () => {
   return (
-    <header className="flex h-20 items-center px-4">
+    <header className="flex h-20 flex-none items-center px-4">
       <div className="flex w-full items-baseline justify-between">
         <div className={clsx([""], unbounded.className)}>
           <Image className="" src={logo} height={50} width={50} alt="logo" />

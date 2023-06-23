@@ -24,7 +24,7 @@ type Props = {
 // variant sequence of animations
 const FlyInText = (props: Props) => {
   return (
-    <div className="h-full overflow-hidden">
+    <div className="overflow-hidden">
       <motion.p
         className={clsx(["relative", "flex", "flex-col"], props.className)}
         variants={props.variants}
