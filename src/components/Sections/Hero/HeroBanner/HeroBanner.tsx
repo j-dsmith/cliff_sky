@@ -13,7 +13,10 @@ type Props = {
   };
 };
 const HeroBanner = ({ textSegments }: Props) => {
-  const h1BaseClass = clsx("text-8xl", unbounded.className);
+  const h1BaseClass = clsx(
+    "3xs:text-7xl 2xs:text-8xl md:text-9xl",
+    unbounded.className
+  );
   return (
     <h1 className={h1BaseClass}>
       <div className="font-medium">

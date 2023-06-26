@@ -5,7 +5,7 @@ export const listVariants: Variants = {
   [VariantNames.Open]: {
     transition: {
       staggerChildren: 0.07,
-      delayChildren: 0.2,
+      delayChildren: 0.5,
     },
   },
   [VariantNames.Closed]: {

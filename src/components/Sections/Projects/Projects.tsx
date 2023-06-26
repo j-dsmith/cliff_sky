@@ -16,15 +16,27 @@ const Projects = ({ projects }: Props) => {
   };
 
   return (
-    <section className="pb-20 pt-12">
+    <section className="pb-20 pt-12 md:pb-32">
       <SectionHeader
         textSegments={{ top: "Selected", bottom: "Projects" }}
-        className="px-4"
+        className="px-4 md:px-6"
       />
+      <Spacer height="h-8" />
       {renderProjects()}
-      <Spacer height="h-20" />
+      <Spacer height="h-12" />
       <div className="flex justify-center">
-        <LinkArrowBtn href="#" label="Full Design CV" size="base" />
+        <LinkArrowBtn
+          href="#"
+          label="Full Design CV"
+          size="base"
+          linkClassName="md:hidden"
+        />
+        <LinkArrowBtn
+          href="#"
+          label="Full Design CV"
+          size="lg"
+          linkClassName="hidden md:block"
+        />
       </div>
     </section>
   );

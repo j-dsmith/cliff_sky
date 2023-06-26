@@ -21,12 +21,22 @@ module.exports = {
       },
       colors: {
         "body-light": "hsl(44deg 60% 95.1%)",
+        "studio-dark": "hsl(210deg 6% 7%)",
+        "cs-mustard": "hsl(50, 54%, 58%)",
       },
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(300px, 1fr))",
       },
       maxWidth: {
         "8xl": "90rem",
+      },
+      fontSize: {
+        "9xl": "7rem",
+      },
+      screens: {
+        "3xs": "320px",
+        "2xs": "375px",
+        xs: "475px",
       },
     },
   },

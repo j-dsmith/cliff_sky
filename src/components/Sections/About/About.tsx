@@ -11,8 +11,10 @@ type Props = {
 
 const About = ({ bio }: Props) => {
   return (
-    <section className="px-4 pb-20 pt-12">
-      <SectionHeader textSegments={{ top: "About", bottom: "Me" }} />
+    <section className="px-4 pb-20 pt-12 md:px-6 lg:px-6 xl:px-8">
+      <SectionHeader textSegments={{ top: "About", bottom: "" }} />
+      <Spacer height="h-8" />
+
       <AboutContent bio={bio} />
       <Spacer height="h-6" />
       <ImageBanner src={aboutImg} className="h-[50vh]" />

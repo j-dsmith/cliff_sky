@@ -6,6 +6,7 @@ import { Project } from "@/../sanity/lib/queries/projects";
 import ProjectThumbnails from "./ProjectThumbnails";
 import { projectCardVariants } from "./variants";
 import { VariantNames } from "@/types/VariantNames";
+import Spacer from "@/components/UI/Spacer/Spacer";
 
 type Props = {
   project: Project;
@@ -20,14 +21,21 @@ const ProjectCard = ({ project }: Props) => {
       initial={VariantNames.Initial}
       className="w-full"
     >
-      <HorizontalScrollContainer className="mb-6 scroll-pl-4 gap-4 px-4">
+      <HorizontalScrollContainer className="scroll-pl-4 gap-4 px-4 md:hidden md:px-6">
         <ProjectThumbnails images={project.images} />
       </HorizontalScrollContainer>
 
+      <div className="hidden grid-cols-4 gap-x-4 px-4 md:grid md:gap-x-6 md:px-6">
+        <ProjectThumbnails images={project.images} />
+      </div>
+
       {/* TODO: Animate content */}
-      <div className="px-4">
-        <h3 className="mt-6 text-3xl">{project.title}</h3>
-        <PortableText value={project.description} />
+      <Spacer height="h-6" />
+      <div className="px-4 md:px-6">
+        <h3 className="text-2xl font-semibold md:text-4xl">{project.title}</h3>
+        <div className="text-stone-600 md:text-lg">
+          <PortableText value={project.description} />
+        </div>
       </div>
     </motion.article>
   );

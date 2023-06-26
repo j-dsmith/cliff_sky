@@ -15,8 +15,8 @@ const ProjectThumbnails = ({ images }: Props) => {
       <motion.div
         key={image._key}
         custom={idx}
-        variants={thumbnailVariants}
-        className="relative aspect-square w-36 min-w-[144px] snap-start overflow-hidden rounded-lg"
+        // variants={thumbnailVariants}
+        className="relative aspect-square w-36 min-w-[144px] snap-start overflow-hidden rounded-lg md:w-full"
       >
         <Image
           alt=""

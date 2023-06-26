@@ -74,7 +74,7 @@ const LinkArrowBtn = ({ href, label, size, linkClassName }: ButtonProps) => {
         <motion.div
           variants={iconContainerVariants}
           layout
-          className="relative grid h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-orange-500"
+          className="relative grid h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-cs-mustard md:h-2 md:w-2"
         >
           <motion.div className="absolute" variants={iconVariants}>
             <Image
