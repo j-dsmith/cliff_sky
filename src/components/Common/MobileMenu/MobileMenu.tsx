@@ -1,29 +1,34 @@
 "use client";
+import { usePathname } from "next/navigation";
 import MenuOverlay from "./MenuOverlay";
+import { useCycle } from "framer-motion";
 import MobileMenuBtn from "./MobileMenuBtn";
-import { useAnimationControls, useCycle } from "framer-motion";
 import { usePageHeight } from "@/hooks/usePageHeight";
 import { VariantNames } from "@/types/VariantNames";
 
 const MobileMenu = () => {
   const [isOpen, cycleIsOpen] = useCycle(
-    VariantNames.Open,
-    VariantNames.Closed
+    VariantNames.Closed,
+    VariantNames.Open
   );
 
   const pageHeight = usePageHeight();
-  const controls = useAnimationControls();
+  const pathname = usePathname();
 
   const handleClick = () => {
     document.body.classList.toggle("overflow-hidden");
-    controls.start(isOpen);
     cycleIsOpen();
   };
 
   return (
-    <div className="flex h-full items-baseline">
-      <MobileMenuBtn handleClick={handleClick} controls={controls} />
-      <MenuOverlay controls={controls} pageHeight={pageHeight ?? 0} />
+    <div className="flex h-full items-baseline lg:hidden">
+      <MobileMenuBtn handleClick={handleClick} isOpen={isOpen} />
+      <MenuOverlay
+        handleClick={handleClick}
+        isOpen={isOpen}
+        pageHeight={pageHeight ?? 0}
+        pathname={pathname}
+      />
     </div>
   );
 };

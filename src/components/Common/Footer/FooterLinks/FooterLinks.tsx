@@ -22,7 +22,7 @@ const FooterLinks = () => {
         variants={listItemVariants}
         custom={idx}
       >
-        <Link href={href} className="text-lg font-medium uppercase">
+        <Link href={href} className="text-lg font-medium uppercase md:text-xl">
           <FlyInText
             variants={linkVariants}
             text={label}
@@ -34,7 +34,7 @@ const FooterLinks = () => {
     ));
   };
   return (
-    <ul ref={ref} className="flex flex-col self-end pr-8">
+    <ul ref={ref} className="flex flex-col gap-1 self-end pr-8 md:gap-2">
       {renderContactLinks()}
     </ul>
   );

@@ -3,6 +3,7 @@ import { Painting } from "@/../sanity/lib/queries/paintings";
 import { urlForImage } from "@/../sanity/lib/image";
 import { Unbounded } from "next/font/google";
 import clsx from "clsx";
+import Spacer from "@/components/UI/Spacer/Spacer";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 
@@ -21,6 +22,7 @@ const ImageCard = ({ painting }: Props) => {
           fill={true}
         />
       </div>
+      <Spacer height="h-1" />
       <div className="flex items-baseline justify-between">
         <h3 className={clsx("text-lg", unbounded.className)}>
           {painting.title}

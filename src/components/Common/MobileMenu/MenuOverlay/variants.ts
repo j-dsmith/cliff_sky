@@ -1,7 +1,7 @@
 import { VariantNames } from "@/types/VariantNames";
 import { Variants } from "framer-motion";
 
-const CIRCLE_POSITION = "calc(100% - 23px) 59px";
+const CIRCLE_POSITION = "calc(100% - 22.5px) 70px";
 export const menuOverlayVariants: Variants = {
   [VariantNames.Initial]: {
     clipPath: `circle(0px at ${CIRCLE_POSITION})`,

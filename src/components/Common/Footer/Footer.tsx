@@ -8,7 +8,9 @@ const Footer = () => {
       <SectionHeader textSegments={{ top: "Idea?", bottom: "Contact" }} />
       <Spacer height="h-6" />
       <FooterLinks />
-      <p className="mx-auto max-w-[55ch] pt-12 text-center text-stone-500">
+      <Spacer height="h-6" />
+      <Spacer height="h-6" className="border-t border-stone-200" />
+      <p className="mx-auto max-w-[60ch] text-center text-stone-500">
         Being a Minneapolis native, I respectfully acknowledge that I create on
         the traditional and ancestral homelands of the Očhéthi Šakówiŋ (Sioux
         Nation), and Wahpekute (Dakota) people.

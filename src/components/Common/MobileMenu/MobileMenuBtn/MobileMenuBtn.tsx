@@ -3,27 +3,25 @@ import clsx from "clsx";
 import { AnimationControls, motion } from "framer-motion";
 import { btnTextVariants } from "./variants";
 import FlyInText from "@/components/UI/FlyInText";
+import { VariantNames } from "@/types/VariantNames";
 
 const unbounded = Unbounded({ subsets: ["latin"] });
 
 type Props = {
   handleClick: () => void;
-  controls: AnimationControls;
+  isOpen: VariantNames;
 };
 
-const MobileMenuBtn = ({ handleClick, controls }: Props) => {
+const MobileMenuBtn = ({ handleClick, isOpen }: Props) => {
   return (
     <button
       role="button"
-      className={clsx(
-        ["text-xl", "h-4/5", "relative", "z-100"],
-        unbounded.className
-      )}
+      className={clsx("relative z-100 h-4/5 text-xl", unbounded.className)}
       onClick={handleClick}
     >
       <motion.div
         initial="initial"
-        animate={controls}
+        animate={isOpen}
         layout
         className="h-full overflow-hidden"
       >

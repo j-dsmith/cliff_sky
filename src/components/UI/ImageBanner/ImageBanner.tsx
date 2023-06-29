@@ -19,7 +19,7 @@ const ImageBanner = ({ src, className, priority }: Props) => {
       initial={VariantNames.Initial}
       variants={imgBannerVariants}
       className={clsx(
-        "relative w-full self-end overflow-hidden rounded-3xl",
+        "relative w-full self-end overflow-hidden rounded-xl md:min-h-[400px]",
         className
       )}
     >

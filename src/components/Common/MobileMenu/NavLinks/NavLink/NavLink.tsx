@@ -1,22 +1,36 @@
+"use client";
 import FlyInText from "@/components/UI/FlyInText";
 import clsx from "clsx";
 import { Unbounded } from "next/font/google";
 import Link from "next/link";
 import { textVariants } from "./variants";
 
-const unbounded = Unbounded({ subsets: ["latin"], weight: ["400"] });
+const unbounded = Unbounded({ subsets: ["latin"], weight: ["300", "500"] });
 
 type Props = {
-  text: string;
+  handleClick: () => void;
+  pathname: string;
+  link: {
+    label: string;
+    href: string;
+  };
 };
 
-const linkClass = clsx(["text-6xl", "capitalize"], unbounded.className);
+const NavLink = ({ link, handleClick, pathname }: Props) => {
+  const linkClass = clsx(
+    "text-6xl capitalize",
+    pathname === link.href ? "font-medium" : "font-light",
+    unbounded.className
+  );
 
-const NavLink = ({ text }: Props) => {
   return (
     <li>
-      <Link href="#">
-        <FlyInText variants={textVariants} className={linkClass} text={text} />
+      <Link href={link.href} onClick={handleClick}>
+        <FlyInText
+          variants={textVariants}
+          className={linkClass}
+          text={link.label}
+        />
       </Link>
     </li>
   );
