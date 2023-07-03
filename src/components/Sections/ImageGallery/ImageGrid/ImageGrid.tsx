@@ -16,7 +16,7 @@ const ImageGrid = ({ paintings }: Props) => {
       ));
   };
   return (
-    <div className="grid w-full grid-cols-auto gap-x-6 gap-y-4 md:gap-x-8 md:gap-y-6 lg:gap-x-12 lg:gap-y-10">
+    <div className="grid w-full gap-x-4 gap-y-4 3xs:grid-cols-auto-xs xs:grid-cols-auto md:gap-x-6 md:gap-y-4 lg:gap-x-8 lg:gap-y-6">
       {renderPaintings()}
     </div>
   );

@@ -15,7 +15,7 @@ const ImageBanner = ({ src, className, priority }: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
-      viewport={{ once: true, amount: 1 }}
+      viewport={{ once: true, amount: 0.4 }}
       initial={VariantNames.Initial}
       variants={imgBannerVariants}
       className={clsx(

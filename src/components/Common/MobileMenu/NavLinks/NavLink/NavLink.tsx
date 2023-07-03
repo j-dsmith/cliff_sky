@@ -18,7 +18,7 @@ type Props = {
 
 const NavLink = ({ link, handleClick, pathname }: Props) => {
   const linkClass = clsx(
-    "text-6xl capitalize",
+    "text-5xl uppercase",
     pathname === link.href ? "font-medium" : "font-light",
     unbounded.className
   );

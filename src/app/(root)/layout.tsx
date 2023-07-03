@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={clsx(["bg-body-light"], montserrat.className)}>
+        <body className={clsx(montserrat.className)}>
           <div className="mx-auto flex h-full max-w-6xl flex-col">
             <Header />
             <main className="flex-1">{children}</main>

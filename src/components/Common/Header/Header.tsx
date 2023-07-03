@@ -5,7 +5,7 @@ import Nav from "../Nav";
 
 const Header = () => {
   return (
-    <header className="flex h-20 items-center px-4 pt-6 md:px-6">
+    <header className="flex h-20 items-center px-4 pt-4 md:px-6 md:pt-6">
       <div className="flex w-full items-baseline justify-between">
         <div className="drop-shadow-sm">
           <Image src={logo} height={40} width={40} alt="logo" />

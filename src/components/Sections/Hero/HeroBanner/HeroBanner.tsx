@@ -14,12 +14,12 @@ type Props = {
 };
 const HeroBanner = ({ textSegments }: Props) => {
   const h1BaseClass = clsx(
-    "3xs:text-7xl 2xs:text-8xl md:text-9xl",
+    "3xs:text-8xl 2xs:text-9xl md:text-10xl",
     unbounded.className
   );
   return (
     <h1 className={h1BaseClass}>
-      <div className="font-medium">
+      <div className="font-medium leading-[.95]">
         <StaggeredText
           text={textSegments.top}
           variants={variantProps}

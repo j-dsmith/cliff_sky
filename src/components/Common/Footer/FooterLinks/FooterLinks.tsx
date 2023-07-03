@@ -22,19 +22,22 @@ const FooterLinks = () => {
         variants={listItemVariants}
         custom={idx}
       >
-        <Link href={href} className="text-lg font-medium uppercase md:text-xl">
+        <Link href={href} className="text-lg uppercase md:text-xl">
           <FlyInText
             variants={linkVariants}
             text={label}
             secondaryText={label}
-            secondaryClassName="font-bold"
+            secondaryClassName="font-bold lg:font-semibold"
           />
         </Link>
       </motion.li>
     ));
   };
   return (
-    <ul ref={ref} className="flex flex-col gap-1 self-end pr-8 md:gap-2">
+    <ul
+      ref={ref}
+      className="flex flex-col gap-1 self-end xs:pr-4 md:gap-2 md:pr-8"
+    >
       {renderContactLinks()}
     </ul>
   );

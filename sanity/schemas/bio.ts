@@ -13,6 +13,22 @@ const bio = {
         },
       ],
     },
+    {
+      name: "bio_long",
+      title: "Bio Long",
+      type: "array",
+      of: [
+        {
+          type: "block",
+        },
+      ],
+    },
+    {
+      name: "services",
+      title: "Services",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "service" }] }],
+    },
   ],
 };
 

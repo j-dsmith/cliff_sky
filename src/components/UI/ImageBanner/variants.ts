@@ -4,7 +4,7 @@ import { Variants } from "framer-motion";
 export const imgBannerVariants: Variants = {
   [VariantNames.Initial]: {
     opacity: 0,
-    y: 20,
+    y: 10,
     scale: 0.95,
   },
   [VariantNames.Animate]: {
@@ -12,7 +12,7 @@ export const imgBannerVariants: Variants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 1.5,
+      duration: 1,
       ease: "easeOut",
     },
   },

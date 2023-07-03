@@ -9,7 +9,7 @@ type Props = {
   bio: Bio;
 };
 
-const About = ({ bio }: Props) => {
+const AboutSummary = ({ bio }: Props) => {
   return (
     <section className="px-4 pb-20 pt-12 md:px-6 lg:px-6 xl:px-8">
       <SectionHeader textSegments={{ top: "About", bottom: "" }} />
@@ -21,4 +21,4 @@ const About = ({ bio }: Props) => {
     </section>
   );
 };
-export default About;
+export default AboutSummary;

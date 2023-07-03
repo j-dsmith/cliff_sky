@@ -26,17 +26,21 @@ module.exports = {
       },
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(300px, 1fr))",
+        "auto-xs": "repeat(auto-fit, minmax(200px, 1fr))",
       },
       maxWidth: {
         "8xl": "90rem",
       },
       fontSize: {
         "9xl": "7rem",
+        "10xl": "8rem",
+        "11xl": "9rem",
+        "12xl": "10rem",
       },
       screens: {
         "3xs": "320px",
         "2xs": "375px",
-        xs: "475px",
+        xs: "425px",
       },
     },
   },

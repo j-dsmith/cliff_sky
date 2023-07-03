@@ -32,7 +32,7 @@ const ProjectCard = ({ project }: Props) => {
       {/* TODO: Animate content */}
       <Spacer height="h-6" />
       <div className="px-4 md:px-6">
-        <h3 className="text-2xl font-semibold md:text-4xl">{project.title}</h3>
+        <h3 className="text-2xl font-medium md:text-4xl">{project.title}</h3>
         <div className="text-stone-600 md:text-lg">
           <PortableText value={project.description} />
         </div>
