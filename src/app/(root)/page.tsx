@@ -5,8 +5,14 @@ import { Unbounded } from "next/font/google";
 import { getProjects } from "@/../sanity/lib/queries/projects";
 import { getBio } from "@/../sanity/lib/queries/bio";
 import AboutSummary from "@/components/Sections/About/AboutSummary";
+import { Metadata } from "next";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
+
+export const metadata: Metadata = {
+  title: "Cliff & Sky",
+  description: "Art and Design portfolio of Carey deVictoria-Michel",
+};
 
 export default async function Home() {
   const projects = await getProjects();

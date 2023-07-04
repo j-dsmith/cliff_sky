@@ -9,15 +9,16 @@ type Props = {
   src: StaticImageData;
   className?: string;
   priority?: boolean;
+  staticAnimation?: boolean;
 };
 
-const ImageBanner = ({ src, className, priority }: Props) => {
+const ImageBanner = ({ src, className, priority, staticAnimation }: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
       viewport={{ once: true, amount: 0.4 }}
       initial={VariantNames.Initial}
-      variants={imgBannerVariants}
+      variants={staticAnimation ? {} : imgBannerVariants}
       className={clsx(
         "relative w-full self-end overflow-hidden rounded-xl md:min-h-[400px]",
         className

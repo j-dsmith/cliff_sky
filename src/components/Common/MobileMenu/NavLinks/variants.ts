@@ -21,7 +21,7 @@ export const navVariants: Variants = {
     display: "none",
   },
   [VariantNames.Open]: {
-    display: "block",
+    display: "flex",
     transition: {
       when: "beforeChildren",
     },

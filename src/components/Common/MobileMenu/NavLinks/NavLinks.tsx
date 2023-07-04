@@ -25,7 +25,7 @@ const NavLinks = ({ handleClick, pathname }: Props) => {
     <motion.nav variants={navVariants} className="fixed inset-0 z-90 pt-40">
       <motion.ul
         variants={listVariants}
-        className="flex w-full flex-col gap-8 px-4"
+        className="flex w-full flex-col gap-16 px-4 md:px-6"
       >
         {renderNavLinks()}
       </motion.ul>

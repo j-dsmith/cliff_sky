@@ -29,7 +29,11 @@ const AboutPage = async () => {
       <Spacer height="h-20" />
       {renderBioIntro()}
       <Spacer height="h-8" />
-      <ImageBanner src={aboutSrc} className="h-[calc(100vh-48px)]" />
+      <ImageBanner
+        src={aboutSrc}
+        staticAnimation={true}
+        className="h-[calc(100vh-48px)]"
+      />
       <Spacer height="h-20" />
       <h2 className="text-2xl lg:text-3xl">My Services</h2>
       <Spacer height="h-12" />
