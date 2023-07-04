@@ -4,6 +4,7 @@ import { urlForImage } from "@/../sanity/lib/image";
 import { Unbounded } from "next/font/google";
 import clsx from "clsx";
 import Spacer from "@/components/UI/Spacer/Spacer";
+import { responsiveImageSizes } from "@/constants/responsiveImageSizes";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 
@@ -18,6 +19,10 @@ const ImageCard = ({ painting }: Props) => {
         <Image
           alt=""
           src={urlForImage(painting.image).url()}
+          placeholder="blur"
+          blurDataURL={urlForImage(painting.image).url()}
+          priority
+          sizes={responsiveImageSizes.painting}
           className="object-cover"
           fill={true}
         />

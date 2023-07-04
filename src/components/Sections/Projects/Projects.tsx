@@ -19,11 +19,13 @@ const Projects = ({ projects }: Props) => {
     <section className="pb-20 pt-12 md:pb-32">
       <SectionHeader
         textSegments={{ top: "Selected", bottom: "Projects" }}
-        className="px-4 md:px-6"
+        className="px-4 md:px-6 lg:px-8"
       />
       <Spacer height="h-8" />
       {renderProjects()}
       <Spacer height="h-12" />
+
+      {/* TODO: Link to CV */}
       <div className="flex justify-center">
         <LinkArrowBtn
           href="#"

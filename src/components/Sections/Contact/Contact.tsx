@@ -15,11 +15,14 @@ const Contact = () => {
       )}
     >
       <ImageBanner
+        role="contact"
         src={contactSrc}
+        priority={true}
+        blurDataURL="/images/contact.png"
         className="h-[30vh] w-full md:h-[revert] md:self-stretch"
       />
       <div className="flex flex-1 flex-col justify-between gap-6">
-        <h1 className="text-6xl font-medium lg:text-7xl">
+        <h1 className="text-6xl font-medium 3xs:text-4xl 2xs:text-5xl md:text-6xl lg:text-7xl">
           Let&apos;s Get
           <br /> In Touch
         </h1>

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Unbounded } from "next/font/google";
 import { getProjects } from "@/../sanity/lib/queries/projects";
 import { getBio } from "@/../sanity/lib/queries/bio";
-import AboutSummary from "@/components/Sections/About/AboutSummary";
+import AboutSummary from "@/components/Sections/About/AboutLong";
 import { Metadata } from "next";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const projects = await getProjects();
-  const { bio } = await getBio();
+  const bio = await getBio();
 
   return (
     <>

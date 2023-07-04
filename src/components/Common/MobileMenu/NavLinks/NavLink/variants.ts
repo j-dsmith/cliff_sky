@@ -22,3 +22,26 @@ export const textVariants: Variants = {
     },
   },
 };
+
+export const numberVariants: Variants = {
+  [VariantNames.Initial]: {
+    opacity: 0,
+    y: 20,
+  },
+  [VariantNames.Open]: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.35,
+      ease: "easeOut",
+    },
+  },
+  [VariantNames.Closed]: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
+    },
+  },
+};

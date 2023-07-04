@@ -5,14 +5,14 @@ export const imgBannerVariants: Variants = {
   [VariantNames.Initial]: {
     opacity: 0,
     y: 10,
-    scale: 0.95,
+    scale: 0.97,
   },
   [VariantNames.Animate]: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 0.65,
       ease: "easeOut",
     },
   },

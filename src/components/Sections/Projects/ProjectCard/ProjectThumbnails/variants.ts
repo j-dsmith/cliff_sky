@@ -11,7 +11,7 @@ export const thumbnailVariants: Variants = {
     y: 0,
     transition: {
       delay: delay * 0.1,
-      duration: 0.5,
+      duration: 0.65,
       ease: "easeOut",
     },
   }),

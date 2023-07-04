@@ -12,7 +12,7 @@ export const iconContainerVariants: Variants = {
   },
   [VariantNames.Hover]: {
     scale: 7,
-    x: 21,
+    x: 25,
     y: -5,
     transition: {
       type: "spring",

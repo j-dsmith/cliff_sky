@@ -1,14 +1,32 @@
-import { Service } from "@/../sanity/lib/queries/bio";
 import ServicesCard from "./ServicesCard/ServicesCard";
 
-type Props = {
-  services: Service[];
+export type Service = {
+  title: string;
+  description: string;
 };
 
-const ServicesList = ({ services }: Props) => {
+const services: Service[] = [
+  {
+    title: "Brand Identity",
+    description:
+      "I will work with you to create a brand identity that is unique to your business. This includes a logo, color palette, and typography.",
+  },
+  {
+    title: "Painting",
+    description:
+      "Original paintings are available for purchase. I also do commissioned work. Please contact me for more information.",
+  },
+  {
+    title: "Graphic Design",
+    description:
+      "I can create custom graphics for your business. This includes social media graphics, promotional posters, flyers, and more.",
+  },
+];
+
+const ServicesList = () => {
   const renderServices = () => {
     return services.map((service, index) => (
-      <ServicesCard service={service} order={index + 1} key={service._id} />
+      <ServicesCard service={service} order={index + 1} key={service.title} />
     ));
   };
 

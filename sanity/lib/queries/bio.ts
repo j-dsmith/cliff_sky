@@ -14,30 +14,17 @@ const bioSelection = {
 } satisfies Selection;
 
 /**
- * Defines a selection object for querying a service document.
- * @property {string} _id - The ID of the service document.
- * @property {string} title - The title of the service.
- * @property {Array<ContentBlock>} description - An array of content blocks representing a description of the service.
- */
-const serviceSelection = {
-  _id: q.string(),
-  title: q.string(),
-  description: q.array(q.contentBlock()),
-} satisfies Selection;
-
-/**
  * Represents a query that retrieves the bio and service documents.
  */
-const bioQuery = q("", { isArray: false }).grab({
-  bio: q("*").filterByType("bio").grab$(bioSelection).slice(0),
-  services: q("*").filterByType("service").grab$(serviceSelection),
-});
-
+const bioQuery = q("*", { isArray: false })
+  .filterByType("bio")
+  .grab$(bioSelection)
+  .slice(0);
 /**
  * Retrieves the bio document.
  * @returns A Promise that resolves to the bio document.
  */
-export const getBio = async (): Promise<BioResponse> => {
+export const getBio = async (): Promise<Bio> => {
   return await runQuery(bioQuery);
 };
 
@@ -45,13 +32,3 @@ export const getBio = async (): Promise<BioResponse> => {
  * Represents a short bio.
  */
 export type Bio = TypeFromSelection<typeof bioSelection>;
-
-/**
- * Represents a service.
- */
-export type Service = TypeFromSelection<typeof serviceSelection>;
-
-type BioResponse = {
-  bio: Bio;
-  services: Service[];
-};

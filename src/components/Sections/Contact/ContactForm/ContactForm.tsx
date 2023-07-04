@@ -17,7 +17,7 @@ const ContactForm = () => {
   return (
     <form
       className={clsx(
-        "flex flex-col gap-4 placeholder:font-semibold",
+        "flex flex-col gap-6 placeholder:font-semibold",
         montserrat.className
       )}
       action="POST"

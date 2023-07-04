@@ -10,9 +10,10 @@ type Props = {
 
 const NavLinks = ({ handleClick, pathname }: Props) => {
   const renderNavLinks = () => {
-    return navLinks.map((link) => {
+    return navLinks.map((link, index) => {
       return (
         <NavLink
+          order={index + 1}
           handleClick={handleClick}
           key={link.label}
           link={link}
@@ -22,10 +23,13 @@ const NavLinks = ({ handleClick, pathname }: Props) => {
     });
   };
   return (
-    <motion.nav variants={navVariants} className="fixed inset-0 z-90 pt-40">
+    <motion.nav
+      variants={navVariants}
+      className="fixed inset-0 z-90 grid place-items-center"
+    >
       <motion.ul
         variants={listVariants}
-        className="flex w-full flex-col gap-16 px-4 md:px-6"
+        className="mx-auto flex flex-col gap-4 px-4 md:px-6"
       >
         {renderNavLinks()}
       </motion.ul>

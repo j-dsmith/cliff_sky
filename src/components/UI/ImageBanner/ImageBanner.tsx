@@ -4,15 +4,28 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { imgBannerVariants } from "./variants";
 import { VariantNames } from "@/types/VariantNames";
+import {
+  ImageBannerRole,
+  responsiveImageSizes,
+} from "@/constants/responsiveImageSizes";
 
 type Props = {
   src: StaticImageData;
+  role: ImageBannerRole;
+  blurDataURL?: string;
   className?: string;
   priority?: boolean;
   staticAnimation?: boolean;
 };
 
-const ImageBanner = ({ src, className, priority, staticAnimation }: Props) => {
+const ImageBanner = ({
+  src,
+  role,
+  className,
+  priority,
+  staticAnimation,
+  blurDataURL,
+}: Props) => {
   return (
     <motion.div
       whileInView={VariantNames.Animate}
@@ -26,9 +39,12 @@ const ImageBanner = ({ src, className, priority, staticAnimation }: Props) => {
     >
       <Image
         src={src}
+        sizes={responsiveImageSizes[role]}
         fill
         priority={priority}
         alt="hero"
+        placeholder="blur"
+        blurDataURL={blurDataURL}
         className="object-cover"
       />
     </motion.div>
