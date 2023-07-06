@@ -4,6 +4,7 @@ import Header from "@/components/Common/Header/Header";
 import clsx from "clsx";
 import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
