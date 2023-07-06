@@ -23,14 +23,14 @@ const HeroBanner = ({ textSegments }: Props) => {
         <StaggeredText
           text={textSegments.top}
           variants={variantProps}
-          delay={10}
+          delay={15}
         />
       </div>
       <div className="font-extralight leading-[1.1] lg:leading-[revert]">
         <StaggeredText
           text={textSegments.bottom}
           variants={variantProps}
-          delay={12}
+          delay={17}
         />
       </div>
     </h1>

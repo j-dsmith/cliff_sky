@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import Preload from "@/components/UI/Preload";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,7 +26,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={clsx(montserrat.className)}>
-          <div className="mx-auto flex h-full max-w-6xl flex-col">
+          <Preload />
+          <div className="mx-auto flex h-full max-w-6xl flex-col 5xl:max-w-10xl">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />

@@ -8,6 +8,7 @@ const Hero = () => {
       <HeroBanner textSegments={{ top: "Cliff", bottom: "& Sky" }} />
       <ImageBanner
         role="hero"
+        delay={2}
         blurDataURL="/images/joshua_tree_hero.png"
         priority={true}
         src={heroImg}
