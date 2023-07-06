@@ -25,21 +25,20 @@ const Projects = ({ projects }: Props) => {
       {renderProjects()}
       <Spacer height="h-12" />
 
-      {/* TODO: Link to CV */}
-      {/* <div className="flex justify-center">
+      <div className="flex justify-center">
         <LinkArrowBtn
-          href="#"
+          href="/CV.pdf"
           label="Full Design CV"
           size="base"
           linkClassName="md:hidden"
         />
         <LinkArrowBtn
-          href="#"
+          href="/CV.pdf"
           label="Full Design CV"
           size="lg"
           linkClassName="hidden md:block"
         />
-      </div> */}
+      </div>
     </section>
   );
 };
