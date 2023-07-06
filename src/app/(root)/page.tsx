@@ -18,13 +18,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     url: "https://cliffandsky.com",
-    images: [
-      {
-        url: "https://cliffandsky.com/images/og_image.png",
-        width: 2880,
-        height: 1800,
-      },
-    ],
   },
 };
 
