@@ -31,7 +31,7 @@ const ServicesList = () => {
   };
 
   return (
-    <ul className="flex flex-col gap-6 pb-20 md:flex-row md:gap-8">
+    <ul className="flex flex-col gap-6 md:flex-row md:gap-8">
       {renderServices()}
     </ul>
   );
