@@ -33,8 +33,13 @@ const projectsQuery = q("*", { isArray: true })
  * Retrieves all projects.
  * @returns A Promise that resolves to an array of projects.
  */
-export const getProjects = async (): Promise<Projects> => {
-  return await runQuery(projectsQuery);
+export const getProjects = async (): Promise<Projects | null> => {
+  try {
+    return await runQuery(projectsQuery);
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };
 
 /**
@@ -42,13 +47,18 @@ export const getProjects = async (): Promise<Projects> => {
  * @param id - The ID of the project to retrieve.
  * @returns A Promise that resolves to the retrieved project.
  */
-export const getProject = async (id: string): Promise<Project> => {
+export const getProject = async (id: string): Promise<Project | null> => {
   const projectQuery = q("*")
     .filter(`_id == '${id}'`)
     .slice(0)
     .grab$(projectSelection);
 
-  return await runQuery(projectQuery);
+  try {
+    return await runQuery(projectQuery);
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 /**

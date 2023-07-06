@@ -30,8 +30,8 @@ export default async function Home() {
       >
         Art and Design by <br className="md:hidden" /> Carey deVictoria-Michel
       </h2>
-      <Projects projects={projects} />
-      <AboutSummary bio={bio} />
+      <Projects projects={projects ?? []} />
+      <AboutSummary bio={bio ?? null} />
     </>
   );
 }

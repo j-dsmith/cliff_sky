@@ -24,8 +24,13 @@ const bioQuery = q("*", { isArray: false })
  * Retrieves the bio document.
  * @returns A Promise that resolves to the bio document.
  */
-export const getBio = async (): Promise<Bio> => {
-  return await runQuery(bioQuery);
+export const getBio = async (): Promise<Bio | null> => {
+  try {
+    return await runQuery(bioQuery);
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 };
 
 /**

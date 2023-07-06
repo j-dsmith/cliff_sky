@@ -9,14 +9,9 @@ export const metadata = {
 };
 
 const Painting = async () => {
-  let paintings: Paintings;
-  try {
-    paintings = await getPaintings();
-  } catch (error) {
-    paintings = [];
-  }
+  const paintings = await getPaintings();
 
-  return <ImageGallery paintings={paintings} />;
+  return <ImageGallery paintings={paintings ?? []} />;
 };
 
 export default Painting;

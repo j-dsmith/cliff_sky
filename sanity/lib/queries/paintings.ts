@@ -24,13 +24,13 @@ const paintingsQuery = q("*", { isArray: true })
   .filterByType("paintings")
   .grab$(paintingSelection);
 
-export const getPaintings = async (): Promise<Paintings> => {
+export const getPaintings = async (): Promise<Paintings | null> => {
   try {
     const res = await runQuery(paintingsQuery);
     return res;
   } catch (error) {
     console.error(error);
-    throw new Error("Failed to fetch paintings");
+    return null;
   }
 };
 

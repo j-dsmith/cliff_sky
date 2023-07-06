@@ -6,7 +6,7 @@ import ImageBanner from "@/components/UI/ImageBanner";
 import Spacer from "@/components/UI/Spacer/Spacer";
 
 type Props = {
-  bio: Bio;
+  bio: Bio | null;
 };
 
 const AboutLong = ({ bio }: Props) => {
