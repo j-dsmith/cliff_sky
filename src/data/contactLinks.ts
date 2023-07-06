@@ -1,22 +1,18 @@
 export const contactLinks = [
   {
-    href: "#",
+    href: "/contact",
     label: "Email",
   },
   {
-    href: "https://www.linkedin.com/in/#",
-    label: "LinkedIn",
+    href: "https://www.etsy.com/shop/CliffandSky",
+    label: "Etsy Shop",
   },
   {
-    href: "https://www.facebook.com/#",
-    label: "Facebook",
-  },
-  {
-    href: "https://www.instagram.com/#",
+    href: "https://www.instagram.com/cliffandsky",
     label: "Instagram",
   },
   {
-    href: "https://www.tiktok.com/@#",
-    label: "TikTok",
+    href: "https://www.pinterest.com/cdevictoriam",
+    label: "Pinterest",
   },
 ];

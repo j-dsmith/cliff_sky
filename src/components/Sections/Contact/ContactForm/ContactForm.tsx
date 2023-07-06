@@ -1,8 +1,14 @@
 "use client";
-import useField from "@/hooks/useField";
 import Input from "./Input";
 import { Montserrat } from "next/font/google";
 import clsx from "clsx";
+import { useForm, Controller, type FieldValues } from "react-hook-form";
+import { sendContactForm } from "@/utils/sendContactForm";
+import { useState } from "react";
+
+import Spacer from "@/components/UI/Spacer/Spacer";
+import SubmitMessage from "./SubmitMessage/SubmitMessage";
+import { ContactFormData } from "@/types/ContactFormData";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -10,9 +16,31 @@ const montserrat = Montserrat({
 });
 
 const ContactForm = () => {
-  const name = useField("text");
-  const email = useField("email");
-  const message = useField("textarea");
+  const { handleSubmit, control, reset } = useForm();
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+
+  const handleSubmitForm = async (data: FieldValues) => {
+    try {
+      await sendContactForm(data as ContactFormData);
+      reset();
+      setFormSubmitted(true);
+      setSubmitStatus("success");
+    } catch (error) {
+      setSubmitStatus("error");
+    }
+  };
+
+  if (formSubmitted && submitStatus) {
+    return (
+      <>
+        <SubmitMessage status={submitStatus} />
+        <Spacer height="h-24" />
+      </>
+    );
+  }
 
   return (
     <form
@@ -20,11 +48,55 @@ const ContactForm = () => {
         "flex flex-col gap-6 placeholder:font-semibold",
         montserrat.className
       )}
+      onSubmit={handleSubmit((data) => handleSubmitForm(data))}
       action="POST"
     >
-      <Input name="name" placeholder="Your name" {...name} />
-      <Input name="email" placeholder="Your email" {...email} />
-      <Input name="message" placeholder="Your message" {...message} />
+      <Controller
+        name="name"
+        control={control}
+        defaultValue=""
+        rules={{ required: true }}
+        render={({ field }) => (
+          <Input
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            placeholder="Your name"
+            type="text"
+          />
+        )}
+      />
+      <Controller
+        name="email"
+        control={control}
+        defaultValue=""
+        rules={{ required: true }}
+        render={({ field }) => (
+          <Input
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            placeholder="Your email"
+            type="text"
+          />
+        )}
+      />
+      <Controller
+        name="message"
+        control={control}
+        defaultValue=""
+        rules={{ required: true }}
+        render={({ field }) => (
+          <Input
+            value={field.value}
+            onChange={field.onChange}
+            onBlur={field.onBlur}
+            placeholder="Your Message"
+            type="textarea"
+          />
+        )}
+      />
+
       <button
         type="submit"
         className="cursor-pointer rounded-md bg-black px-5 py-4 text-lg font-semibold text-white"

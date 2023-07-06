@@ -13,24 +13,23 @@ const FooterLinks = () => {
 
   const renderContactLinks = (): JSX.Element[] => {
     return contactLinks.map(({ href, label }, idx) => (
-      <motion.li
-        key={label}
-        layout
-        animate={inView && VariantNames.Animate}
-        initial={VariantNames.Initial}
-        whileHover={VariantNames.Hover}
-        variants={listItemVariants}
-        custom={idx}
-      >
-        <Link href={href} className="text-lg uppercase md:text-xl">
+      <a key={label} href={href} className="text-lg uppercase md:text-xl">
+        <motion.li
+          layout
+          animate={inView && VariantNames.Animate}
+          initial={VariantNames.Initial}
+          whileHover={VariantNames.Hover}
+          variants={listItemVariants}
+          custom={idx}
+        >
           <FlyInText
             variants={linkVariants}
             text={label}
             secondaryText={label}
             secondaryClassName="font-bold lg:font-semibold"
           />
-        </Link>
-      </motion.li>
+        </motion.li>
+      </a>
     ));
   };
   return (

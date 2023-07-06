@@ -1,5 +1,5 @@
 import HeroBanner from "./HeroBanner/HeroBanner";
-import heroImg from "@/../public/images/joshua-tree-night.png";
+import heroImg from "@/../public/images/joshua_tree_hero.png";
 import ImageBanner from "@/components/UI/ImageBanner";
 
 const Hero = () => {
@@ -8,7 +8,7 @@ const Hero = () => {
       <HeroBanner textSegments={{ top: "Cliff", bottom: "& Sky" }} />
       <ImageBanner
         role="hero"
-        blurDataURL="/images/joshua-tree-night.png"
+        blurDataURL="/images/joshua_tree_hero.png"
         priority={true}
         src={heroImg}
         className="flex-1"

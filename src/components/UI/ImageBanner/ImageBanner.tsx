@@ -41,6 +41,7 @@ const ImageBanner = ({
         src={src}
         sizes={responsiveImageSizes[role]}
         fill
+        quality={95}
         priority={priority}
         alt="hero"
         placeholder="blur"
