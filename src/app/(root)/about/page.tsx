@@ -1,12 +1,15 @@
 import ImageBanner from "@/components/UI/ImageBanner";
-
 import aboutSrc from "@/../public/images/about_cdm.png";
-
 import Spacer from "@/components/UI/Spacer/Spacer";
 import { PortableText } from "@portabletext/react";
 import { getBio } from "../../../../sanity/lib/queries/bio";
 import ServicesList from "@/components/Sections/About/AboutPage/ServicesList";
 import BioContent from "@/components/Sections/About/AboutPage/BioContent";
+
+export const metadata = {
+  title: "About - Cliff & Sky",
+  description: "Art & Design by Carey deVictoria-Michel",
+};
 
 const AboutPage = async () => {
   const { bio_long } = await getBio();

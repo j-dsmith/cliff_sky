@@ -26,7 +26,7 @@ const Projects = ({ projects }: Props) => {
       <Spacer height="h-12" />
 
       {/* TODO: Link to CV */}
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <LinkArrowBtn
           href="#"
           label="Full Design CV"
@@ -39,7 +39,7 @@ const Projects = ({ projects }: Props) => {
           size="lg"
           linkClassName="hidden md:block"
         />
-      </div>
+      </div> */}
     </section>
   );
 };
