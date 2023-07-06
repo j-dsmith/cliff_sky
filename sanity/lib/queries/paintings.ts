@@ -27,7 +27,6 @@ const paintingsQuery = q("*", { isArray: true })
 export const getPaintings = async (): Promise<Paintings> => {
   try {
     const res = await runQuery(paintingsQuery);
-    console.log(res);
     return res;
   } catch (error) {
     console.error(error);
