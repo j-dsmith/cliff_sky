@@ -14,6 +14,7 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "Cliff & Sky",
   description: "Art & Design by Carey deVictoria-Michel",
+  icon: "/favicon.ico",
 };
 
 export default function RootLayout({
