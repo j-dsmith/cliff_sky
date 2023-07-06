@@ -28,13 +28,13 @@ const Projects = ({ projects }: Props) => {
       <div className="flex justify-center">
         <LinkArrowBtn
           href="/CV.pdf"
-          label="Full Design CV"
+          label="Design Portfolio"
           size="base"
           linkClassName="md:hidden"
         />
         <LinkArrowBtn
           href="/CV.pdf"
-          label="Full Design CV"
+          label="Design Portfolio"
           size="lg"
           linkClassName="hidden md:block"
         />
