@@ -8,12 +8,7 @@ export const listVariants: Variants = {
       delayChildren: 0.5,
     },
   },
-  [VariantNames.Closed]: {
-    transition: {
-      staggerChildren: 0.05,
-      staggerDirection: -1,
-    },
-  },
+  [VariantNames.Closed]: {},
 };
 
 export const navVariants: Variants = {
