@@ -33,7 +33,7 @@ export const iconVariants: Variants = {
     y: 0,
     transition: {
       type: "spring",
-      delay: 0.25,
+      delay: 0.1,
       stiffness: 200,
       damping: 30,
       restDelta: 0.1,
