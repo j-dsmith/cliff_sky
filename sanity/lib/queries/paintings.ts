@@ -13,7 +13,6 @@ const paintingSelection = {
   _id: q.string(),
   title: q.string(),
   year: q.number(),
-  description: q.string(),
   image: sanityImage("image", { isList: false }),
 } satisfies Selection;
 
