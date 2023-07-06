@@ -25,21 +25,18 @@ type ButtonVariantProps = VariantProps<typeof buttonClasses>;
 
 export interface ButtonProps extends ButtonVariantProps, ComponentProps {}
 
-const buttonClasses = cva(
-  ["flex", "items-baseline", "gap-1", "uppercase", "will-change-transform"],
-  {
-    variants: {
-      size: {
-        sm: "text-lg",
-        base: "text-xl",
-        lg: "text-2xl",
-      },
+const buttonClasses = cva(["flex", "items-baseline", "gap-1", "uppercase"], {
+  variants: {
+    size: {
+      sm: "text-lg",
+      base: "text-xl",
+      lg: "text-2xl",
     },
-    defaultVariants: {
-      size: "base",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: "base",
+  },
+});
 
 const unbounded = Unbounded({ subsets: ["latin"] });
 
@@ -76,12 +73,9 @@ const LinkArrowBtn = ({ href, label, size, linkClassName }: ButtonProps) => {
         <motion.div
           variants={iconContainerVariants}
           layout
-          className="relative hidden h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-cs-mustard will-change-transform md:grid md:h-2 md:w-2"
+          className="relative hidden h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-cs-mustard md:grid md:h-2 md:w-2"
         >
-          <motion.div
-            className="absolute will-change-transform"
-            variants={iconVariants}
-          >
+          <motion.div className="absolute" variants={iconVariants}>
             <Image
               alt="arrow-icon"
               src="/arrow-up-right.svg"
@@ -91,7 +85,7 @@ const LinkArrowBtn = ({ href, label, size, linkClassName }: ButtonProps) => {
           </motion.div>
         </motion.div>
 
-        <div className="relative grid h-1.5 w-1.5 -translate-y-1 translate-x-2 scale-[5] transform place-items-center overflow-hidden rounded-full bg-cs-mustard will-change-transform md:hidden md:h-2 md:w-2">
+        <div className="relative grid h-1.5 w-1.5 -translate-y-1 translate-x-2 scale-[5] transform place-items-center overflow-hidden rounded-full bg-cs-mustard md:hidden md:h-2 md:w-2">
           <div className="absolute md:hidden">
             <Image
               alt="arrow-icon"

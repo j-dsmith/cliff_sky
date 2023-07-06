@@ -27,7 +27,7 @@ const FlyInText = (props: Props) => {
     <div className="overflow-hidden">
       <motion.p
         className={clsx(
-          "relative flex flex-col pr-1 leading-[1.2] will-change-transform",
+          "relative flex flex-col pr-1 leading-[1.2]",
           props.className
         )}
         variants={props.variants}
