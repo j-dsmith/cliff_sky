@@ -12,6 +12,16 @@ const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 export const metadata: Metadata = {
   title: "Cliff & Sky",
   description: "Art and Design portfolio of Carey deVictoria-Michel",
+  openGraph: {
+    title: "Cliff & Sky",
+    type: "website",
+    url: "https://cliffandsky.com",
+    images: [
+      {
+        url: "https://cliffandsky.com/images/og_image.png",
+      },
+    ],
+  },
 };
 
 export default async function Home() {

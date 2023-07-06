@@ -8,6 +8,16 @@ import AboutHeader from "@/components/Sections/About/AboutPage/AboutHeader";
 export const metadata = {
   title: "About - Cliff & Sky",
   description: "Art & Design by Carey deVictoria-Michel",
+  openGraph: {
+    title: "About - Cliff & Sky",
+    type: "website",
+    url: "https://cliffandsky.com/about",
+    images: [
+      {
+        url: "https://cliffandsky.com/images/og_about_page.png",
+      },
+    ],
+  },
 };
 
 const AboutPage = async () => {
