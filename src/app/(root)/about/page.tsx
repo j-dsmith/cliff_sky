@@ -12,10 +12,10 @@ export const metadata = {
 };
 
 const AboutPage = async () => {
-  const { bio_long } = await getBio();
+  const bio = await getBio();
 
   const renderBioIntro = () => {
-    return bio_long.map((block) => {
+    return bio?.bio_long.map((block) => {
       return (
         <div key={block._key} className="max-w-[55ch] md:text-xl">
           <PortableText value={block} />
@@ -48,14 +48,7 @@ const AboutPage = async () => {
       <Spacer height="h-24" className="border-b border-stone-200" />
       <Spacer height="h-20" />
       <BioContent>{renderBioIntro()}</BioContent>
-      <Spacer height="h-8" />
-      {/* <ImageBanner
-        src={aboutSrc}
-        staticAnimation={true}
-        className="h-[calc(100vh-48px)]"
-      /> */}
-      <Spacer height="h-20" />
-
+      <Spacer height="h-28" />
       <h2 className="text-3xl font-medium lg:text-3xl">My Services</h2>
       <Spacer height="h-12" />
       <ServicesList />
