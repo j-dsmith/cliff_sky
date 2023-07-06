@@ -26,7 +26,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={clsx(montserrat.className)}>
-          <Preload />
           <div className="mx-auto flex h-full max-w-6xl flex-col 5xl:max-w-10xl">
             <Header />
             <main className="flex-1">{children}</main>

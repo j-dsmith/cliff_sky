@@ -1,4 +1,5 @@
 import Contact from "@/components/Sections/Contact/Contact";
+import Preload from "@/components/UI/Preload";
 import Spacer from "@/components/UI/Spacer/Spacer";
 
 export const metadata = {
@@ -16,6 +17,7 @@ export const metadata = {
 const ContactPage = () => {
   return (
     <>
+      <Preload />
       <Contact />
       <Spacer height="h-20" />
     </>

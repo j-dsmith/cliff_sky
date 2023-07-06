@@ -6,6 +6,7 @@ import { getProjects } from "@/../sanity/lib/queries/projects";
 import { getBio } from "@/../sanity/lib/queries/bio";
 import AboutSummary from "@/components/Sections/About/LandingPage/AboutSummary";
 import { Metadata } from "next";
+import Preload from "@/components/UI/Preload";
 
 const unbounded = Unbounded({ subsets: ["latin"], weight: ["300"] });
 
@@ -27,6 +28,7 @@ export default async function Home() {
 
   return (
     <>
+      <Preload />
       <Hero />
       <h2
         className={clsx(

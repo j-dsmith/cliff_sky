@@ -4,6 +4,7 @@ import { getBio } from "../../../../sanity/lib/queries/bio";
 import ServicesList from "@/components/Sections/About/AboutPage/ServicesList";
 import BioContent from "@/components/Sections/About/AboutPage/BioContent";
 import AboutHeader from "@/components/Sections/About/AboutPage/AboutHeader";
+import Preload from "@/components/UI/Preload";
 
 export const metadata = {
   title: "About - Cliff & Sky",
@@ -31,15 +32,18 @@ const AboutPage = async () => {
   };
 
   return (
-    <section className="px-4 pb-48 md:px-6 lg:px-8">
-      <AboutHeader />
-      <Spacer height="h-20" />
-      <BioContent>{renderBioIntro()}</BioContent>
-      <Spacer height="h-28" />
-      <h2 className="text-3xl font-medium lg:text-3xl">My Services</h2>
-      <Spacer height="h-12" />
-      <ServicesList />
-    </section>
+    <>
+      <Preload />
+      <section className="px-4 pb-48 md:px-6 lg:px-8">
+        <AboutHeader />
+        <Spacer height="h-20" />
+        <BioContent>{renderBioIntro()}</BioContent>
+        <Spacer height="h-28" />
+        <h2 className="text-3xl font-medium lg:text-3xl">My Services</h2>
+        <Spacer height="h-12" />
+        <ServicesList />
+      </section>
+    </>
   );
 };
 export default AboutPage;

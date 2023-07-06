@@ -7,13 +7,13 @@ export const menuOverlayVariants: Variants = {
     clipPath: `circle(0px at ${CIRCLE_POSITION})`,
   },
   [VariantNames.Closed]: {
-    clipPath: `circle(0px at ${CIRCLE_POSITION})`,
-    transition: {
-      delay: 0.2,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
+    // clipPath: `circle(0px at ${CIRCLE_POSITION})`,
+    // transition: {
+    //   delay: 0.2,
+    //   type: "spring",
+    //   stiffness: 400,
+    //   damping: 40,
+    // },
   },
   [VariantNames.Open]: (height = 1000) => ({
     clipPath: `circle(${height * 2}px at ${CIRCLE_POSITION}`,
