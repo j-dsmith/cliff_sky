@@ -14,11 +14,15 @@ export const metadata: Metadata = {
   description: "Art and Design portfolio of Carey deVictoria-Michel",
   openGraph: {
     title: "Cliff & Sky",
+    siteName: "Cliff & Sky",
+    locale: "en_US",
     type: "website",
     url: "https://cliffandsky.com",
     images: [
       {
         url: "https://cliffandsky.com/images/og_image.png",
+        width: 2880,
+        height: 1800,
       },
     ],
   },

@@ -6,11 +6,15 @@ export const metadata = {
   description: "Contact Cliff & Sky",
   openGraph: {
     title: "Contact - Cliff & Sky",
+    siteName: "Cliff & Sky",
+    locale: "en_US",
     type: "website",
     url: "https://cliffandsky.com/contact",
     images: [
       {
         url: "https://cliffandsky.com/images/og_contact_page.png",
+        width: 2880,
+        height: 1800,
       },
     ],
   },
