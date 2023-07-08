@@ -1,4 +1,4 @@
-[Landing Page](https://i.imgur.com/SBTxl6C.png)
+![Landing Page](https://i.imgur.com/SBTxl6C.png)
 
 
 ## Getting Started
