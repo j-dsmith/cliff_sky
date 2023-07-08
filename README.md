@@ -12,34 +12,19 @@ I chose to use [Tailwind](https://www.tailwindcss.com) for the styling on this p
 
 Animations are implemented using [Framer Motion](https://www.framer.com/motion). Framer Motion is a fantastic React animation library that offers a user friendly API for its `motion` components which can be quickly scaled up to add complex and dynamic animations linked to conditional or gesture-based triggers throughout the entire component tree. To maximize Server Components and the increase in performance they can offer, especially when using a JavaScript heavy library like Framer, I chose whenever possible to separate out Animations into reusable components that can be marked as Client Components. Framer's `motion` components implement `useEffect` and other hooks under the hood, so they must rendered in Client Components in Next.js 13. This separation of the animation components means the rest of the component tree could remain Server Components and only the animations themselves would be rendered on the client, rather than the parent components as well, reducing bundle size. 
 
+## Pages / Sections
 
+### Landing Page - Hero
+![Hero Section](https://i.imgur.com/SBTxl6C.png)
 
-First, run the development server:
+### Landing Page - Projects
+![Projects Section](https://i.imgur.com/A1SzJg0.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Contact Page
+![Contact Page](https://i.imgur.com/ZqdJ1zD.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+## Next Steps
+Currently I am developing an E-Commerce page using Stripe to implement online store functionality.
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
