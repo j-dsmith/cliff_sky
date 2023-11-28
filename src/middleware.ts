@@ -8,6 +8,7 @@ export default authMiddleware({
     "/api/contact",
     "/contact",
     "/shop",
+    "/cart",
   ],
 });
 

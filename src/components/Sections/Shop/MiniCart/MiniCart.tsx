@@ -42,12 +42,15 @@ const MiniCart: FC = ({}) => {
           </p>
           <p className="font-semibold">{formattedPrice}</p>
         </div>
-        <Link
-          href="/cart"
-          className="mr-auto inline-block w-3/4 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-stone-800"
-        >
-          Go To Cart
-        </Link>
+
+        <div className="flex w-3/4 gap-8">
+          <Link
+            href="/cart"
+            className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-stone-800"
+          >
+            Go To Cart
+          </Link>
+        </div>
       </div>
     </motion.div>
   );
