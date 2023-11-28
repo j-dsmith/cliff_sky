@@ -13,7 +13,7 @@ interface CartAddToCartProps {
 }
 
 const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
-  const { sizes, images, title, price } = product;
+  const { sizes, images, title, price, _id: id } = product;
   const [selectedSize, setSelectedSize] = useState<string | null>(sizes[0]);
   const { isOpen, setIsOpen } = useMiniCartStore((state) => state);
 
@@ -27,7 +27,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
     addItem({
       name: title,
       price: price,
-      sku: `test-${selectedSize}`,
+      sku: `$${selectedSize}-${id}`,
       currency: "USD",
       image: urlForImage(images[0].asset).url(),
       size: selectedSize,

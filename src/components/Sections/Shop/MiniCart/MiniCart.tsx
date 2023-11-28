@@ -5,12 +5,18 @@ import { slideoutVariants } from "./variants";
 import useMiniCartStore from "@/stores/useMiniCartStore";
 import { useShoppingCart } from "use-shopping-cart";
 import MiniCartList from "../MiniCartList";
+import Link from "next/link";
 
-interface MiniCartProps {}
-
-const MiniCart: FC<MiniCartProps> = ({}) => {
+const MiniCart: FC = ({}) => {
   const controls = useAnimationControls();
-  const { isOpen, toggleOpen } = useMiniCartStore((state) => state);
+  const { totalPrice } = useShoppingCart();
+  const formattedPrice =
+    totalPrice &&
+    (totalPrice / 100).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  const { isOpen } = useMiniCartStore((state) => state);
 
   useEffect(() => {
     if (isOpen) {
@@ -29,6 +35,20 @@ const MiniCart: FC<MiniCartProps> = ({}) => {
     >
       <h4 className="py-8 text-2xl font-semibold">Your Cart</h4>
       <MiniCartList />
+      <div className="w-full border px-6 py-4 shadow">
+        <div className="flex justify-between pb-8">
+          <p className="mb-4 text-sm text-stone-600">
+            <span>Subtotal </span> <span>(excl. shipping)</span>
+          </p>
+          <p className="font-semibold">{formattedPrice}</p>
+        </div>
+        <Link
+          href="/cart"
+          className="mr-auto inline-block w-3/4 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-stone-800"
+        >
+          Go To Cart
+        </Link>
+      </div>
     </motion.div>
   );
 };
