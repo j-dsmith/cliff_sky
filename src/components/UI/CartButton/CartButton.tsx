@@ -1,15 +1,21 @@
 "use client";
 import useMiniCartStore from "@/stores/useMiniCartStore";
+import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import { FC, useEffect } from "react";
+import { FC, use, useEffect } from "react";
+import { useShoppingCart } from "use-shopping-cart";
+import { countVariants } from "./variants";
+import { VariantNames } from "@/types/VariantNames";
 
 interface CartButtonProps {}
 
 const CartButton: FC<CartButtonProps> = ({}) => {
   const pathname = usePathname();
+  const controls = useAnimationControls();
 
   const { isOpen, toggleOpen, setIsOpen } = useMiniCartStore((state) => state);
+  const { cartCount } = useShoppingCart();
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -18,6 +24,23 @@ const CartButton: FC<CartButtonProps> = ({}) => {
 
     handleRouteChange();
   }, [setIsOpen, pathname]);
+
+  /**
+   * Handle animation effects
+   */
+  useEffect(() => {
+    if (isOpen) {
+      controls.start(VariantNames.Open);
+    } else {
+      controls.start(VariantNames.Closed);
+    }
+  }, [isOpen, controls]);
+
+  useEffect(() => {
+    if (cartCount) {
+      controls.start(VariantNames.Animate);
+    }
+  }, [controls, cartCount]);
 
   if (pathname === "/cart") return null;
 
@@ -63,6 +86,14 @@ const CartButton: FC<CartButtonProps> = ({}) => {
           <path d="m6 6 12 12" />
         </svg>
       )}
+      <motion.div
+        variants={countVariants}
+        initial={VariantNames.Initial}
+        animate={controls}
+        className="absolute -right-1 -top-1 grid h-6 w-6 place-items-center rounded-full bg-black text-xs font-semibold text-white shadow-xl"
+      >
+        {cartCount}
+      </motion.div>
     </button>
   );
 };
