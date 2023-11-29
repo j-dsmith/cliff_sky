@@ -15,7 +15,7 @@ const AboutShort = ({ bio }: Props) => {
       viewport={{ once: true, amount: 1 }}
       initial={VariantNames.Initial}
       variants={bioContentVariants}
-      className="max-w-[55ch] text-stone-600 md:text-lg"
+      className="max-w-[55ch] text-gray-600 md:text-lg"
     >
       {bio ? <PortableText value={bio.bio_short} /> : null}
     </motion.div>

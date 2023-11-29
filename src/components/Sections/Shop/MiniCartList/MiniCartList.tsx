@@ -21,7 +21,7 @@ const MiniCartList: FC<MiniCartListProps> = ({}) => {
           <MiniCartItem cartItem={item}>
             <button
               onClick={() => handleRemoveItem(item.id)}
-              className="flex gap-0.5 text-stone-500 hover:text-stone-800"
+              className="flex items-center gap-1 text-gray-600 hover:animate-pulse"
             >
               <div className="grid items-center">
                 <svg

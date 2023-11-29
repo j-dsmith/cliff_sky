@@ -21,39 +21,13 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
       </div>
       <div className="flex flex-col justify-evenly gap-1 text-xs">
         <p className="text-sm font-medium leading-tight">{name}</p>
-        <p className=" text-stone-800">
+        <p className=" text-gray-800">
           Size: <span className="uppercase">{size}</span>
         </p>
-        <p className=" text-stone-800">Quantity: {quantity}</p>
+        <p className=" text-gray-800">Quantity: {quantity}</p>
         {children}
       </div>
       <p className="text-end font-medium">{formattedPrice}</p>
-      {/* <div className="flex justify-between">
-        <div className="flex flex-col justify-between">
-          <p className="font-medium leading-tight">{name}</p>
-          <p className="text-sm uppercase text-stone-800">Size: {size}</p>
-          <div className="flex">
-            <button className="aspect-square w-8 rounded-s-lg border  border-stone-200 bg-stone-200">
-              -
-            </button>
-            <input
-              className="w-10 border-y border-stone-200 text-center"
-              type="text"
-              inputMode="numeric"
-              value={quantity}
-              style={{
-                appearance: "textfield",
-                MozAppearance: "textfield",
-                WebkitAppearance: "none",
-              }}
-            />
-            <button className="aspect-square w-8 rounded-e-lg border border-stone-200 bg-stone-200">
-              +
-            </button>
-          </div>
-        </div>
-        <p className="mt-auto text-xl font-medium">{cartItem.formattedValue}</p>
-      </div> */}
     </div>
   );
 };

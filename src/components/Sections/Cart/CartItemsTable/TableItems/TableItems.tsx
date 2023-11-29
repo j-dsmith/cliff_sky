@@ -19,7 +19,7 @@ const TableItems: FC<TableItemsProps> = ({}) => {
       return (
         <tr
           key={item.id}
-          className="h-12 border-b text-sm transition-colors duration-100 hover:bg-stone-50"
+          className="h-12 border-b text-sm transition-colors duration-100 hover:bg-gray-50"
         >
           <td className="w-1/6 p-4">
             <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
@@ -40,7 +40,7 @@ const TableItems: FC<TableItemsProps> = ({}) => {
           <td className="w-1/6">
             <div className="flex gap-2">
               <button
-                className="text-stone-600 hover:animate-pulse"
+                className="text-gray-600 hover:animate-pulse"
                 onClick={() => removeItem(item.id)}
               >
                 <svg
@@ -65,7 +65,7 @@ const TableItems: FC<TableItemsProps> = ({}) => {
               />
             </div>
           </td>
-          <td className="w-1/6 text-stone-500">{item.formattedPrice}</td>
+          <td className="w-1/6 text-gray-500">{item.formattedPrice}</td>
           <td className="w-1/6 font-medium">{item.formattedValue}</td>
         </tr>
       );

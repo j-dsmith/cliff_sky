@@ -39,7 +39,7 @@ const ProjectCard = ({ project }: Props) => {
         className="px-4 md:px-6 lg:px-8"
       >
         <h3 className="text-2xl font-medium md:text-4xl">{project.title}</h3>
-        <div className="text-stone-600 md:text-lg">
+        <div className="text-gray-600 md:text-lg">
           <PortableText value={project.description} />
         </div>
       </motion.div>

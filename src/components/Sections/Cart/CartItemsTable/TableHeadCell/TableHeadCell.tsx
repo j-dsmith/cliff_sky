@@ -10,7 +10,7 @@ const TableHeadCell: FC<TableHeadCellProps> = ({ text, className }) => {
   return (
     <th
       className={clsx(
-        "pb-4 text-left text-sm font-semibold text-stone-600",
+        "pb-4 text-left text-sm font-semibold text-gray-600",
         className
       )}
     >

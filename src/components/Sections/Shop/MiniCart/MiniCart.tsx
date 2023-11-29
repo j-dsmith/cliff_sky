@@ -31,13 +31,13 @@ const MiniCart: FC = ({}) => {
       initial="initial"
       animate={controls}
       variants={slideoutVariants}
-      className="fixed bottom-1 right-1 top-1 flex w-[33vw] flex-col items-center rounded-2xl border border-stone-300 bg-white shadow-md"
+      className="fixed bottom-1 right-1 top-1 flex w-[33vw] flex-col items-center rounded-2xl border border-gray-300 bg-white shadow-md"
     >
       <h4 className="py-8 text-2xl font-semibold">Your Cart</h4>
       <MiniCartList />
       <div className="w-full border px-6 py-4 shadow">
         <div className="flex justify-between pb-8">
-          <p className="mb-4 text-sm text-stone-600">
+          <p className="mb-4 text-sm text-gray-600">
             <span>Subtotal </span> <span>(excl. shipping)</span>
           </p>
           <p className="font-semibold">{formattedPrice}</p>
@@ -46,7 +46,7 @@ const MiniCart: FC = ({}) => {
         <div className="flex w-3/4 gap-8">
           <Link
             href="/cart"
-            className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-stone-800"
+            className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-gray-800"
           >
             Go To Cart
           </Link>

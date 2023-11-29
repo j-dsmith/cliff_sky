@@ -12,7 +12,7 @@ const QuantityIncrementor: FC<QuantityIncrementorProps> = ({
   handleQuantityChange,
 }) => {
   return (
-    <div className="group relative flex h-10 w-14  items-center justify-center rounded-md border bg-stone-100 py-2">
+    <div className="group relative flex h-10 w-14  items-center justify-center rounded-md border bg-gray-100 py-2">
       <select
         name="quantity-selector"
         id="quantity-selector"

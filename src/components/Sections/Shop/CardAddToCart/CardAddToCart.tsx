@@ -44,13 +44,13 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
         <li
           key={size}
           className={clsx(
-            "flex-1 rounded-lg border py-1 hover:bg-black hover:font-semibold hover:text-white",
+            "flex-1 rounded-xl border py-1 hover:bg-black hover:font-semibold hover:text-white",
             selectedSize?.toUpperCase() === size?.toUpperCase() &&
               "bg-black font-semibold text-white"
           )}
         >
           <button
-            className="h-full w-full uppercase"
+            className="h-full w-full px-1.5 uppercase"
             onClick={() => handleSelectSize(size)}
           >
             {size}
@@ -61,11 +61,11 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
   };
   return (
     <div className="">
-      <ul className="flex w-4/5 flex-wrap gap-1">{renderSizeOptions()}</ul>
+      <ul className="flex w-4/5 flex-wrap gap-2">{renderSizeOptions()}</ul>
       <Spacer height="h-6" />
       <button
         onClick={handleAddToCart}
-        className="w-full rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-stone-800"
+        className="w-full rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-gray-800"
       >
         Add To Cart
       </button>

@@ -21,7 +21,7 @@ const Nav = () => {
         <Link
           className={clsx(
             "uppercase",
-            pathname === link.href ? "font-bold" : "font-normal text-stone-600"
+            pathname === link.href ? "font-bold" : "font-normal text-gray-600"
           )}
           href={link.href}
         >

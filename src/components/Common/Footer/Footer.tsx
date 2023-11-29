@@ -9,8 +9,8 @@ const Footer = () => {
       <Spacer height="h-6" />
       <FooterLinks />
       <Spacer height="h-6" />
-      <Spacer height="h-6" className="border-t border-stone-200" />
-      <p className="mx-auto max-w-[60ch] text-center text-stone-500">
+      <Spacer height="h-6" className="border-t border-gray-200" />
+      <p className="mx-auto max-w-[60ch] text-center text-gray-500">
         Being a Minneapolis native, I respectfully acknowledge that I create on
         the traditional and ancestral homelands of the Očhéthi Šakówiŋ (Sioux
         Nation), and Wahpekute (Dakota) people.

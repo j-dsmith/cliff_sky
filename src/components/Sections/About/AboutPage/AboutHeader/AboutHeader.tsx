@@ -3,7 +3,7 @@ import aboutSrc from "@/../public/images/about_cdm.png";
 
 const AboutHeader = () => {
   return (
-    <div className="flex flex-col gap-8 border-b border-stone-200 pb-24 pt-20">
+    <div className="flex flex-col gap-8 border-b border-gray-200 pb-24 pt-20">
       <h1 className="order-2 text-3xl font-medium leading-tight md:order-1 lg:text-4xl">
         <p>Visual Creative &</p>
         <p>Graphic Designer,</p>
