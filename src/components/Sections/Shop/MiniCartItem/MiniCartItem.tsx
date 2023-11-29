@@ -13,7 +13,6 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
     style: "currency",
     currency: "USD",
   });
-  console.log(cartItem);
 
   return (
     <div className="grid h-28 w-full grid-cols-[120px_2fr_min-content] gap-4 px-6">
