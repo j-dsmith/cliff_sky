@@ -6,7 +6,7 @@ interface ShopProps {}
 
 const Shop: FC<ShopProps> = ({}) => {
   return (
-    <section className="px-8">
+    <section className="px-8 pb-20">
       <ShopHeader />
       <ItemsGrid />
     </section>

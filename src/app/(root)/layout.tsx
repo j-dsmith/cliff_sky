@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
-import Preload from "@/components/UI/Preload";
 import CartProvider from "@/providers/CartProvider";
 import MiniCart from "@/components/Sections/Shop/MiniCart";
 import CartButton from "@/components/UI/CartButton";

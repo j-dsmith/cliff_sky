@@ -48,7 +48,7 @@ const MiniCartList: FC<MiniCartListProps> = ({}) => {
   };
 
   return (
-    <ul className="flex w-full flex-1 flex-col gap-6 overflow-auto">
+    <ul className="flex w-full flex-1 flex-col gap-6 overflow-auto pb-4">
       {renderMiniCartItems()}
     </ul>
   );

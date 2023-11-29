@@ -16,8 +16,8 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const formattedPrice = (price / 100).toFixed(0);
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border bg-stone-50 p-2">
-      <div className="relative h-[350px] overflow-hidden rounded-xl bg-blue-300 shadow-sm">
+    <div className="flex flex-col gap-4 p-2">
+      <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
         <Image
           src={urlForImage(images[0].asset).url()}
           alt=""
@@ -35,7 +35,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </div>
         <Spacer height="h-1" />
         <p className="capitalize">{color}</p>
-        <Spacer height="h-3" />
+        <Spacer height="h-4" />
 
         <CardAddToCart product={product} />
       </div>

@@ -1,11 +1,26 @@
 "use client";
 import useMiniCartStore from "@/stores/useMiniCartStore";
-import { FC } from "react";
+import { usePathname } from "next/navigation";
+
+import { FC, useEffect } from "react";
 
 interface CartButtonProps {}
 
 const CartButton: FC<CartButtonProps> = ({}) => {
-  const { isOpen, toggleOpen } = useMiniCartStore((state) => state);
+  const pathname = usePathname();
+
+  const { isOpen, toggleOpen, setIsOpen } = useMiniCartStore((state) => state);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false);
+    };
+
+    handleRouteChange();
+  }, [setIsOpen, pathname]);
+
+  if (pathname === "/cart") return null;
+
   const handleClick = () => {
     toggleOpen();
   };

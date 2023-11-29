@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { CartEntry } from "use-shopping-cart/core";
 
 type QuantityIncrementorProps = {
   handleQuantityChange: (id: string, updatedValue: string) => void;

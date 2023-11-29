@@ -62,7 +62,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
   return (
     <div className="">
       <ul className="flex w-4/5 flex-wrap gap-1">{renderSizeOptions()}</ul>
-      <Spacer height="h-3" />
+      <Spacer height="h-6" />
       <button
         onClick={handleAddToCart}
         className="w-full rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-stone-800"
