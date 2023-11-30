@@ -3,7 +3,8 @@ import project from "./schemas/project";
 import bio from "./schemas/bio";
 import painting from "./schemas/painting";
 import service from "./schemas/service";
+import product from "./schemas/product";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [project, bio, painting, service],
+  types: [project, bio, painting, product, service],
 };

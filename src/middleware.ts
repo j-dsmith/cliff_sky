@@ -9,6 +9,7 @@ export default authMiddleware({
     "/contact",
     "/shop",
     "/cart",
+    "/products/(.*)",
   ],
 });
 

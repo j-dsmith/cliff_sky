@@ -37,10 +37,10 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   }, [isOpen, controls]);
 
   useEffect(() => {
-    if (cartCount) {
+    if (cartCount && !isOpen) {
       controls.start(VariantNames.Animate);
     }
-  }, [controls, cartCount]);
+  }, [controls, cartCount, isOpen]);
 
   if (pathname === "/cart") return null;
 
