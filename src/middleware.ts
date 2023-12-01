@@ -10,6 +10,7 @@ export default authMiddleware({
     "/shop",
     "/cart",
     "/products/(.*)",
+    "/api/checkout_sessions",
   ],
 });
 

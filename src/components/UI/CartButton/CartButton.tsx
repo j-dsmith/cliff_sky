@@ -40,13 +40,16 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     if (cartCount && !isOpen) {
       controls.start(VariantNames.Animate);
     }
-  }, [controls, cartCount, isOpen]);
+    //? This ensures that the animation only runs once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (pathname === "/cart") return null;
 
   const handleClick = () => {
     toggleOpen();
   };
+
   return (
     <button
       onClick={handleClick}

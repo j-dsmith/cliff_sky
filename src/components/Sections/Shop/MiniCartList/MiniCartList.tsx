@@ -39,7 +39,7 @@ const MiniCartList: FC<MiniCartListProps> = ({}) => {
                   />
                 </svg>
               </div>
-              <span className="text-sm">Remove</span>
+              <span className="text-xs">Remove</span>
             </button>
           </MiniCartItem>
         </li>

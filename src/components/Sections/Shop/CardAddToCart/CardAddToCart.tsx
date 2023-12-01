@@ -27,7 +27,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
     addItem({
       name: title,
       price: price,
-      sku: `$${selectedSize}-${id}`,
+      sku: `${selectedSize}-${id}`,
       currency: "USD",
       image: urlForImage(images[0].asset).url(),
       size: selectedSize,
