@@ -22,7 +22,7 @@ const Preload = () => {
         <motion.div
           key={idx}
           variants={columnVariants}
-          className=" bg-cs-mustard"
+          className=" bg-cs-mustard-400"
         />
       ))}
     </motion.div>

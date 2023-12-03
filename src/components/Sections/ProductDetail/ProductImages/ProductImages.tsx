@@ -44,12 +44,12 @@ const ProductImages: FC<ProductImagesProps> = ({ product }) => {
             <button
               onClick={() => handleThumbnailClick(intent, image)}
               className={cn(
-                "relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-cs-mustard focus:ring-offset-2",
+                "relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-cs-mustard-400 focus:ring-offset-2",
                 intent === "primary"
                   ? selectedImage._key === image._key &&
-                      "ring-2 ring-cs-mustard ring-offset-2"
+                      "ring-2 ring-cs-mustard-400 ring-offset-2"
                   : selectedDialogImage._key === image._key &&
-                      "ring-2 ring-cs-mustard ring-offset-2"
+                      "ring-2 ring-cs-mustard-400 ring-offset-2"
               )}
             >
               <Image
@@ -82,7 +82,7 @@ const ProductImages: FC<ProductImagesProps> = ({ product }) => {
           {renderThumbnailRow("primary")}
           {extraThumbnailCount > 0 && (
             <li className="flex-1 ">
-              <DialogTrigger className="aspect-square w-full rounded-xl border text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-cs-mustard focus:ring-offset-2">
+              <DialogTrigger className="aspect-square w-full rounded-xl border text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-cs-mustard-400 focus:ring-offset-2">
                 +{extraThumbnailCount} More
               </DialogTrigger>
             </li>

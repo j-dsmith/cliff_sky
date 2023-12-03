@@ -3,7 +3,7 @@ import { Variants } from "framer-motion";
 
 export const slideoutVariants: Variants = {
   [VariantNames.Initial]: {
-    x: "100%",
+    x: "105%",
   },
   [VariantNames.Open]: {
     x: 0,
@@ -13,7 +13,7 @@ export const slideoutVariants: Variants = {
     },
   },
   [VariantNames.Closed]: {
-    x: "100%",
+    x: "105%",
     transition: {
       duration: 0.3,
       ease: "easeOut",

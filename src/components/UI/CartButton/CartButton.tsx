@@ -44,7 +44,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (pathname === "/cart") return null;
+  if (pathname === "/cart" || !cartCount) return null;
 
   const handleClick = () => {
     toggleOpen();
@@ -53,7 +53,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-4 right-4 grid h-16 w-16 place-items-center rounded-full border border-cs-mustard bg-cs-mustard-light text-black shadow-xl"
+      className="fixed bottom-4 right-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-black shadow-xl"
     >
       {!isOpen ? (
         <svg

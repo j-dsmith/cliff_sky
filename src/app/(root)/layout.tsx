@@ -29,7 +29,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={clsx(montserrat.className)}>
           <CartProvider>
-            <div className="mx-auto flex h-full flex-col 5xl:max-w-10xl">
+            <div className="mx-auto flex h-full flex-col 5xl:max-w-[2560px]">
               <Header />
               <main className="flex-1">{children}</main>
               <Footer />

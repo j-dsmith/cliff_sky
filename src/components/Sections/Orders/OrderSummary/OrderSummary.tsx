@@ -1,13 +1,12 @@
 import stripe from "@/utils/stripe";
 import { cn } from "@/utils/utils";
 import { Unbounded } from "next/font/google";
-import { FC, Suspense } from "react";
-import Spacer from "@/components/UI/Spacer/Spacer";
+import { FC } from "react";
 import { fetchOrCreateNewOrderFromSession } from "@/utils/orders";
 import ShippingInformation from "./ShippingInformation";
 import SummaryIcon from "./SummaryIcon";
-import SummaryItems, { SummaryItemSkeletonLoader } from "./SummaryItems";
-import { LineItemSchema, SessionSchema } from "../config";
+import SummaryItems from "./SummaryItems";
+import { SessionSchema } from "../config";
 
 const unbounded = Unbounded({
   weight: ["400", "500", "600", "700"],

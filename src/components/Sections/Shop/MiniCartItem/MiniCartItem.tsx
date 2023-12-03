@@ -15,12 +15,19 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
   });
 
   return (
-    <div className="grid h-24 w-full grid-cols-[96px_1fr] gap-4 px-6">
-      <div className="relative aspect-square w-24 overflow-hidden rounded-xl border shadow-sm">
+    <div className="grid w-full gap-4 px-2 3xs:h-[72px] 3xs:grid-cols-[72px_1fr] md:h-24 md:grid-cols-[96px_1fr]">
+      <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
         <Image src={image || ""} fill alt="" className="object-contain" />
       </div>
-      <div className="flex flex-col justify-evenly gap-1 text-xs">
-        <p className="text-sm font-medium leading-tight">{name}</p>
+      <div className="flex flex-col justify-evenly gap-1 text-xs 3xs:gap-0.5">
+        <div className="flex items-baseline justify-between">
+          <p className="font-medium leading-tight 3xs:max-w-[16ch] 3xs:text-xs 2xs:text-sm">
+            {name}
+          </p>
+          <p className="rounded-lg border border-cs-mustard-200 bg-cs-mustard-100 p-1 font-medium text-cs-mustard-900 drop-shadow 3xs:text-xs 2xs:text-sm">
+            {formattedPrice}
+          </p>
+        </div>
         <p className=" text-gray-800">
           Size: <span className="uppercase">{size}</span>
         </p>
@@ -29,7 +36,6 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
           {children}
         </div>
       </div>
-      <p className="text-end font-medium">{formattedPrice}</p>
     </div>
   );
 };

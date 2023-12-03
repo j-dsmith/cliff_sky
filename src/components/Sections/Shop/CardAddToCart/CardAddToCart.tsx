@@ -6,7 +6,6 @@ import { useShoppingCart } from "use-shopping-cart";
 import { Product } from "@/../sanity/lib/queries/product";
 import useMiniCartStore from "@/stores/useMiniCartStore";
 import { urlForImage } from "@/../sanity/lib/image";
-import { Product as StripeProduct } from "use-shopping-cart/core";
 
 interface CartAddToCartProps {
   product: Product;
@@ -44,13 +43,13 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
         <li
           key={size}
           className={clsx(
-            "flex-1 rounded-xl border py-1 hover:bg-black hover:font-semibold hover:text-white",
+            "flex-1 basis-1/5 rounded-xl border py-1 hover:bg-black hover:font-semibold hover:text-white",
             selectedSize?.toUpperCase() === size?.toUpperCase() &&
               "bg-black font-semibold text-white"
           )}
         >
           <button
-            className="h-full w-full px-1.5 uppercase"
+            className="h-full w-full px-1.5 py-1 uppercase"
             onClick={() => handleSelectSize(size)}
           >
             {size}
@@ -61,7 +60,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
   };
   return (
     <div className="">
-      <ul className="flex w-4/5 flex-wrap gap-2">{renderSizeOptions()}</ul>
+      <ul className="flex w-full flex-nowrap gap-2">{renderSizeOptions()}</ul>
       <Spacer height="h-6" />
       <button
         onClick={handleAddToCart}

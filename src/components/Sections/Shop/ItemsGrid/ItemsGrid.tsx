@@ -15,7 +15,11 @@ const ItemsGrid: FC<ItemsGridProps> = async ({}) => {
     ));
   };
 
-  return <div className="grid grid-cols-4 gap-x-6">{renderProducts()}</div>;
+  return (
+    <div className="4xl:grid-cols-5 grid gap-x-6 3xs:grid-cols-1 3xs:gap-y-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {renderProducts()}
+    </div>
+  );
 };
 
 export default ItemsGrid;

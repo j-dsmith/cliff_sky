@@ -10,7 +10,7 @@ const AboutHeader = () => {
         <p>
           Based in <span className="inline sm:hidden">Mpls</span>
           <span className="hidden sm:inline">Minneapolis</span>
-          <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-cs-mustard" />
+          <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-cs-mustard-400" />
         </p>
       </h1>
       <ImageBanner

@@ -73,7 +73,7 @@ const LinkArrowBtn = ({ href, label, size, linkClassName }: ButtonProps) => {
         <motion.div
           variants={iconContainerVariants}
           layout
-          className="relative hidden h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-cs-mustard md:grid md:h-2 md:w-2"
+          className="relative hidden h-1.5 w-1.5 place-items-center overflow-hidden rounded-full bg-cs-mustard-400 md:grid md:h-2 md:w-2"
         >
           <motion.div className="absolute" variants={iconVariants}>
             <Image
@@ -85,7 +85,7 @@ const LinkArrowBtn = ({ href, label, size, linkClassName }: ButtonProps) => {
           </motion.div>
         </motion.div>
 
-        <div className="relative grid h-1.5 w-1.5 -translate-y-1 translate-x-2 scale-[5] transform place-items-center overflow-hidden rounded-full bg-cs-mustard md:hidden md:h-2 md:w-2">
+        <div className="relative grid h-1.5 w-1.5 -translate-y-1 translate-x-2 scale-[5] transform place-items-center overflow-hidden rounded-full bg-cs-mustard-400 md:hidden md:h-2 md:w-2">
           <div className="absolute md:hidden">
             <Image
               alt="arrow-icon"

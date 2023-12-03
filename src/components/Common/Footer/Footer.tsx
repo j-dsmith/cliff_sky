@@ -4,7 +4,7 @@ import Spacer from "@/components/UI/Spacer/Spacer";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-none flex-col px-4 pb-8 pt-12 md:px-8">
+    <footer className="flex flex-none flex-col px-4 pb-8 pt-12 md:px-6 lg:px-8 2xl:px-16 ">
       <SectionHeader textSegments={{ top: "Idea?", bottom: "Contact" }} />
       <Spacer height="h-6" />
       <FooterLinks />

@@ -16,7 +16,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const formattedPrice = (price / 100).toFixed(0);
 
   return (
-    <div className="flex flex-col gap-4 p-2">
+    <div className="flex flex-col gap-4">
       <Link href={`/products/${_id}`}>
         <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
           <Image
@@ -29,11 +29,11 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </div>
       </Link>
       <div className="flex flex-col p-2">
-        <div className="flex justify-between gap-8 text-xl">
+        <div className="flex items-baseline justify-between gap-8 3xs:text-lg md:text-xl">
           <Link href={`/products/${_id}`}>
-            <h3 className="font-bold">{title}</h3>
+            <h3 className="font-bold ">{title}</h3>
           </Link>
-          <p className="text-2xl font-medium text-gray-600">
+          <p className="rounded-xl border border-cs-mustard-300 bg-cs-mustard-200 px-2 py-1 font-medium text-cs-mustard-900">
             ${formattedPrice}
           </p>
         </div>

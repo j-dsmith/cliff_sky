@@ -17,10 +17,10 @@ const MenuOverlay = ({ isOpen, pageHeight, handleClick, pathname }: Props) => {
   return (
     <>
       <div className="">
-        <span className="h-min text-6xl text-cs-mustard">.</span>
+        <span className="h-min text-6xl text-cs-mustard-400">.</span>
       </div>
       <motion.div
-        className="fixed bottom-0 right-0 top-0 z-90 w-full bg-cs-mustard px-4 md:px-6"
+        className="fixed bottom-0 right-0 top-0 z-90 w-full bg-cs-mustard-400 px-4 md:px-6"
         variants={menuOverlayVariants}
         animate={isOpen}
         layout

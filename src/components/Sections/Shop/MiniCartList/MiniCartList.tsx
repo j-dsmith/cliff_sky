@@ -30,7 +30,7 @@ const MiniCartList: FC<MiniCartListProps> = ({}) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="h-4 w-4"
+                  className="h-4 w-4 3xs:h-3 3xs:w-3"
                 >
                   <path
                     strokeLinecap="round"

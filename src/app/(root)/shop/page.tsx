@@ -1,7 +1,5 @@
 import Shop from "@/components/Sections/Shop";
-
 import { FC } from "react";
-import { getProducts } from "@/../sanity/lib/queries/product";
 
 interface ShopPageProps {}
 

@@ -13,7 +13,7 @@ const OrderSuccessPage: FC<OrderSuccessPageProps> = async ({
   searchParams,
 }) => {
   return (
-    <>
+    <div className="mx-auto max-w-[1440px]">
       <div className="h-20 px-4 pt-4 md:px-6 md:pt-6 lg:px-8 lg:pt-8">
         <Link href="/">
           <div className="drop-shadow-sm">
@@ -21,11 +21,11 @@ const OrderSuccessPage: FC<OrderSuccessPageProps> = async ({
           </div>
         </Link>
       </div>
-      <section className="max-h-[calc(100%-80px)] grid-cols-1 px-4 pb-6 pt-16 3xs:grid 3xs:pt-12 md:px-6 lg:flex lg:px-8">
+      <section className="grid-cols-1 pb-6 pt-16 3xs:grid 3xs:gap-y-16 3xs:px-4 3xs:pt-12 xs:px-5 md:px-8 lg:flex lg:max-h-[calc(100%-80px)]">
         <OrderSummary sessionId={searchParams["session_id"] as string} />
         <SuccessAnimation />
       </section>
-    </>
+    </div>
   );
 };
 
