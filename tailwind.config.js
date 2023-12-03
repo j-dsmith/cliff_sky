@@ -27,6 +27,7 @@ module.exports = {
         cartBtn: "1001",
         imageModalOverlay: "1002",
         imageModal: "1003",
+        preload: "5000",
       },
       gridTemplateColumns: {
         auto: "repeat(auto-fit, minmax(300px, 1fr))",

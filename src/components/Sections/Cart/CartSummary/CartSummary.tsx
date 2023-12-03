@@ -1,12 +1,14 @@
 "use client";
-import Link from "next/link";
 import { FC } from "react";
 import { useShoppingCart } from "use-shopping-cart";
 import { loadStripe } from "@stripe/stripe-js";
+import { Unbounded } from "next/font/google";
+import { cn } from "@/utils/utils";
+import Link from "next/link";
 
-interface CartSummaryProps {}
+const unbounded = Unbounded({ weight: ["500"], subsets: ["latin"] });
 
-const CartSummary: FC<CartSummaryProps> = ({}) => {
+const CartSummary: FC = ({}) => {
   const { formattedTotalPrice, cartDetails } = useShoppingCart();
 
   const redirectToCheckout = async () => {
@@ -37,8 +39,15 @@ const CartSummary: FC<CartSummaryProps> = ({}) => {
   };
 
   return (
-    <div className="sticky top-8 flex h-40 flex-1 basis-1/5 flex-col gap-4">
-      <h2 className="border-b pb-4 text-4xl font-semibold">Summary</h2>
+    <div className="flex min-h-[160px] flex-1 basis-1/5 flex-col gap-4">
+      <h2
+        className={cn(
+          "border-b pb-4 text-4xl font-semibold",
+          unbounded.className
+        )}
+      >
+        Summary
+      </h2>
       <div className="flex justify-between text-sm text-gray-700">
         <span>Subtotal</span>
         <span>{formattedTotalPrice}</span>
@@ -52,12 +61,20 @@ const CartSummary: FC<CartSummaryProps> = ({}) => {
         <span className="font-semibold">Total (before shipping)</span>
         <span className="text-lg font-semibold">{formattedTotalPrice}</span>
       </div>
-      <button
-        onClick={redirectToCheckout}
-        className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-gray-800"
-      >
-        Go To Checkout
-      </button>
+      <div className="flex flex-col gap-4">
+        <Link
+          href="/shop"
+          className="flex-1 rounded-xl border border-gray-300 bg-gray-200 py-3 text-center text-lg font-semibold text-gray-600 transition-colors duration-100 hover:border-gray-400 hover:bg-gray-300 hover:text-gray-800"
+        >
+          Continue Shopping
+        </Link>
+        <button
+          onClick={redirectToCheckout}
+          className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white transition-colors duration-100 hover:bg-gray-800"
+        >
+          Go To Checkout
+        </button>
+      </div>
     </div>
   );
 };

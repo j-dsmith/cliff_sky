@@ -64,7 +64,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
       <Spacer height="h-6" />
       <button
         onClick={handleAddToCart}
-        className="w-full rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-gray-800"
+        className="w-full rounded-xl bg-black py-3 text-lg font-semibold text-white transition-colors duration-100 hover:bg-gray-800"
       >
         Add To Cart
       </button>

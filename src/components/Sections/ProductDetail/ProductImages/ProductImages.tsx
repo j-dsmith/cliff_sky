@@ -145,8 +145,8 @@ const ProductImages: FC<ProductImagesProps> = ({ product }) => {
           )}
         </ul>
         <DialogOverlay className="z-imageModalOverlay" />
-        <DialogContent className="z-imageModal min-w-[50vw] p-8 3xs:p-2 md:min-w-[80vw]">
-          <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
+        <DialogContent className="z-imageModal min-w-[40vw] p-8 3xs:p-2 lg:min-h-[75vh]">
+          <div className="relative mx-auto aspect-square overflow-hidden rounded-xl border shadow-sm 3xs:w-full md:w-4/5">
             <Image
               src={urlForImage(selectedDialogImage.asset).url()}
               alt=""

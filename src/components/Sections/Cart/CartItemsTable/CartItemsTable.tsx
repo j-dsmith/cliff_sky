@@ -6,7 +6,7 @@ interface CartItemsTableProps {}
 
 const CartItemsTable: FC<CartItemsTableProps> = ({}) => {
   return (
-    <table className="">
+    <table className="3xs:hidden lg:table">
       <thead>
         <tr className="border-b">
           <TableHeadCell text="Item" className="w-1/6" />

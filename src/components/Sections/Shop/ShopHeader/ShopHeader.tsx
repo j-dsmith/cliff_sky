@@ -28,13 +28,7 @@ const ShopHeader: FC<ShopHeaderProps> = ({}) => {
         </p>
       </div>
       <Spacer height="h-8 xs:h-6 md:h-8" />
-      <Image
-        src={shopSrc}
-        height={800}
-        width={1200}
-        alt="A digital design as shop page banner"
-        className="w-full rounded-xl"
-      />
+      <div className="h-16 w-full rounded-xl bg-gradient-to-r from-cs-mustard-300 to-cs-mustard-400" />
       <Spacer height="h-8 md:h-16" />
       <Filters />
       {/* <div className="flex items-center justify-center">

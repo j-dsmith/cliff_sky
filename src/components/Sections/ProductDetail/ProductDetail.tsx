@@ -40,13 +40,6 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
   };
 
   const renderSizeOptions = () => {
-    if (!searchParams.has("size")) {
-      const newParams = new URLSearchParams(searchParams.toString());
-      newParams.set("size", sizes[0]);
-      router.replace(createUrl(`/products/${product._id}/`, newParams), {
-        scroll: false,
-      });
-    }
     return sizes.map((size) => {
       return (
         <dd key={size} className="flex-1">
@@ -105,7 +98,12 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
           <div className="flex flex-nowrap gap-2">{renderSizeOptions()}</div>
           <button
             onClick={handleAddToCart}
-            className="mt-auto rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-gray-800 3xs:w-full"
+            disabled={!searchParams.get("size")}
+            className={cn(
+              "mt-auto rounded-xl bg-black py-3 text-lg font-semibold text-white transition-colors duration-100 3xs:w-full",
+              !searchParams.get("size") && "bg-gray-200 text-gray-400",
+              searchParams.get("size") && "hover:bg-gray-800"
+            )}
           >
             Add To Cart
           </button>

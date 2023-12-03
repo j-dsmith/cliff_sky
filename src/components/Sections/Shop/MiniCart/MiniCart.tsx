@@ -6,10 +6,11 @@ import useMiniCartStore from "@/stores/useMiniCartStore";
 import { useShoppingCart } from "use-shopping-cart";
 import MiniCartList from "../MiniCartList";
 import Link from "next/link";
+import { VariantNames } from "@/types/VariantNames";
 
 const MiniCart: FC = ({}) => {
   const controls = useAnimationControls();
-  const { totalPrice } = useShoppingCart();
+  const { totalPrice, cartCount } = useShoppingCart();
   const formattedPrice =
     totalPrice &&
     (totalPrice / 100).toLocaleString("en-US", {
@@ -20,11 +21,18 @@ const MiniCart: FC = ({}) => {
 
   useEffect(() => {
     if (isOpen) {
-      controls.start("open");
+      controls.start(VariantNames.Open);
     } else {
-      controls.start("initial");
+      controls.start(VariantNames.Initial);
     }
   }, [controls, isOpen]);
+
+  useEffect(() => {
+    console.log(cartCount);
+    if (cartCount === 0) {
+      controls.start(VariantNames.Initial);
+    }
+  }, [cartCount, controls]);
 
   return (
     <motion.div
@@ -35,6 +43,7 @@ const MiniCart: FC = ({}) => {
     >
       <h4 className="py-8 text-2xl font-semibold">Your Cart</h4>
       <MiniCartList />
+
       <div className="w-full py-4 3xs:px-2 md:px-4">
         <div className="flex justify-between pb-8">
           <p className="mb-4 text-sm text-gray-600">
@@ -46,7 +55,7 @@ const MiniCart: FC = ({}) => {
         <div className="flex w-3/4 gap-8">
           <Link
             href="/cart"
-            className=" flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white hover:bg-gray-800"
+            className="flex-1 rounded-xl bg-black py-3 text-center text-lg font-semibold text-white transition-colors duration-100 hover:bg-gray-800"
           >
             Go To Cart
           </Link>

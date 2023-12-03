@@ -14,7 +14,7 @@ const Preload = () => {
       variants={containerVariants}
       onAnimationComplete={() => setAnimationComplete(true)}
       className={clsx(
-        "fixed inset-0 z-500 grid grid-cols-4",
+        "z-preload fixed inset-0 grid grid-cols-4",
         animationComplete && "hidden"
       )}
     >
