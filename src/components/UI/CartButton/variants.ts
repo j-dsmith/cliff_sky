@@ -29,3 +29,20 @@ export const countVariants: Variants = {
     },
   },
 };
+
+export const cartButtonVariants: Variants = {
+  [VariantNames.Hidden]: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  [VariantNames.Visible]: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};

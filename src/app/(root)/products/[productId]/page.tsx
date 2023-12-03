@@ -14,7 +14,7 @@ const ProductDetailPage: FC<ProductDetailPageProps> = async ({
   const product = await getOneProduct(productId);
   if (!product) return null;
   return (
-    <section className="flex flex-col px-8 py-20">
+    <section className="flex flex-col px-8 py-20 3xs:px-2 xs:px-4 md:px-6 lg:px-8 2xl:px-16">
       <ProductDetail product={product} />
     </section>
   );

@@ -3,10 +3,11 @@ import useMiniCartStore from "@/stores/useMiniCartStore";
 import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import { FC, use, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useShoppingCart } from "use-shopping-cart";
-import { countVariants } from "./variants";
+import { cartButtonVariants, countVariants } from "./variants";
 import { VariantNames } from "@/types/VariantNames";
+import useMobileMenuStore from "@/stores/useMobileMenuStore";
 
 interface CartButtonProps {}
 
@@ -15,8 +16,15 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   const controls = useAnimationControls();
 
   const { isOpen, toggleOpen, setIsOpen } = useMiniCartStore((state) => state);
+  const { isOpen: menuOpen } = useMobileMenuStore((state) => state);
+
   const { cartCount } = useShoppingCart();
 
+  /**
+   * Handle animation effects
+   */
+
+  // This effect closes the mini cart when the route changes
   useEffect(() => {
     const handleRouteChange = () => {
       setIsOpen(false);
@@ -25,9 +33,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     handleRouteChange();
   }, [setIsOpen, pathname]);
 
-  /**
-   * Handle animation effects
-   */
+  // This effect handles animations when the mini cart is opened or closed
   useEffect(() => {
     if (isOpen) {
       controls.start(VariantNames.Open);
@@ -36,6 +42,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     }
   }, [isOpen, controls]);
 
+  // this effect handles the initial animation when the cart count is greater than 0
   useEffect(() => {
     if (cartCount && !isOpen) {
       controls.start(VariantNames.Animate);
@@ -44,6 +51,15 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // this effect handles the animation when the mobile menu is opened or closed
+  useEffect(() => {
+    if (menuOpen) {
+      controls.start(VariantNames.Hidden);
+    } else {
+      controls.start(VariantNames.Visible);
+    }
+  }, [menuOpen, controls]);
+
   if (pathname === "/cart" || !cartCount) return null;
 
   const handleClick = () => {
@@ -51,9 +67,11 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   };
 
   return (
-    <button
+    <motion.button
+      variants={cartButtonVariants}
+      animate={controls}
       onClick={handleClick}
-      className="fixed bottom-4 right-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-black shadow-xl"
+      className="fixed bottom-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-black shadow-xl 3xs:right-2 md:right-4"
     >
       {!isOpen ? (
         <svg
@@ -97,7 +115,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
       >
         {cartCount}
       </motion.div>
-    </button>
+    </motion.button>
   );
 };
 

@@ -17,7 +17,7 @@ const MiniCartList: FC<MiniCartListProps> = ({}) => {
   const renderMiniCartItems = () => {
     return Object.values(cartDetails).map((item) => {
       return (
-        <li key={item.id} className="">
+        <li key={item.id}>
           <MiniCartItem cartItem={item}>
             <button
               onClick={() => handleRemoveItem(item.id)}

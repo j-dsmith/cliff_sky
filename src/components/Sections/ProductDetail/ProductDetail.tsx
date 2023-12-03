@@ -1,12 +1,15 @@
 "use client";
-import { FC, useState } from "react";
-import { Product, ProductImage } from "@/../sanity/lib/queries/product";
+import { FC } from "react";
+import { Product } from "@/../sanity/lib/queries/product";
 import ProductImages from "./ProductImages";
 import Spacer from "@/components/UI/Spacer/Spacer";
 import { PortableText } from "@portabletext/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createUrl } from "@/utils/createUrl";
 import { cn } from "@/utils/utils";
+import { useShoppingCart } from "use-shopping-cart";
+import { urlForImage } from "../../../../sanity/lib/image";
+import useMiniCartStore from "@/stores/useMiniCartStore";
 
 type ProductDetailProps = {
   product: Product;
@@ -15,6 +18,8 @@ type ProductDetailProps = {
 const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { addItem } = useShoppingCart();
+  const { isOpen, setIsOpen } = useMiniCartStore((state) => state);
 
   if (!product) return null;
 
@@ -35,9 +40,16 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
   };
 
   const renderSizeOptions = () => {
+    if (!searchParams.has("size")) {
+      const newParams = new URLSearchParams(searchParams.toString());
+      newParams.set("size", sizes[0]);
+      router.replace(createUrl(`/products/${product._id}/`, newParams), {
+        scroll: false,
+      });
+    }
     return sizes.map((size) => {
       return (
-        <dd key={size}>
+        <dd key={size} className="flex-1">
           <button
             onClick={() => handleSizeChange(size)}
             className={cn(
@@ -54,13 +66,29 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
     });
   };
 
+  const handleAddToCart = () => {
+    const selectedSize = searchParams.get("size");
+    addItem({
+      name: title,
+      price: price,
+      sku: `${selectedSize}-${product._id}`,
+      currency: "USD",
+      image: urlForImage(product.images[0].asset).url(),
+      size: selectedSize,
+    });
+
+    if (!isOpen) {
+      setIsOpen(true);
+    }
+  };
+
   return (
-    <div className="flex flex-1 gap-16">
+    <div className="flex-1 grid-cols-1 3xs:grid 3xs:gap-y-6 md:flex md:gap-8 lg:gap-16">
       <ProductImages product={product} />
       <div className="flex flex-1 flex-col overflow-scroll">
-        <h2 className="text-4xl font-semibold">{title}</h2>
+        <h2 className="font-semibold 3xs:text-2xl">{title}</h2>
         <Spacer height="h-4" />
-        <p className="text-3xl">{formattedPrice}</p>
+        <p className="text-3xl 3xs:text-xl">{formattedPrice}</p>
         <Spacer height="h-4" />
         <p className="text-sm text-gray-600">
           Shipping calculated at checkout.
@@ -70,12 +98,14 @@ const ProductDetail: FC<ProductDetailProps> = ({ product }) => {
           <PortableText value={description} />
         </div>
         <dl className="flex flex-1 flex-col gap-4">
-          <Spacer height="h-4" className="border-b" />
+          <Spacer height="h-8" className="border-b" />
+          <Spacer height="h-4" className="" />
+
           <dt className="font-medium">Size</dt>
-          <div className="flex gap-2">{renderSizeOptions()}</div>
+          <div className="flex flex-nowrap gap-2">{renderSizeOptions()}</div>
           <button
-            // onClick={handleAddToCart}
-            className="mt-auto w-3/4 rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-gray-800"
+            onClick={handleAddToCart}
+            className="mt-auto rounded-xl bg-black py-3 text-lg font-semibold text-white hover:bg-gray-800 3xs:w-full"
           >
             Add To Cart
           </button>

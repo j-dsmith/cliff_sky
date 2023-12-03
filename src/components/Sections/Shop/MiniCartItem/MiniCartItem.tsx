@@ -15,7 +15,7 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
   });
 
   return (
-    <div className="grid w-full gap-4 px-2 3xs:h-[72px] 3xs:grid-cols-[72px_1fr] md:h-24 md:grid-cols-[96px_1fr]">
+    <div className="grid w-full gap-4 3xs:h-[72px] 3xs:grid-cols-[72px_1fr] 3xs:px-2 md:h-24 md:grid-cols-[96px_1fr] md:px-4">
       <div className="relative aspect-square w-full overflow-hidden rounded-xl border shadow-sm">
         <Image src={image || ""} fill alt="" className="object-contain" />
       </div>
@@ -32,7 +32,7 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
           Size: <span className="uppercase">{size}</span>
         </p>
         <div className="flex justify-between">
-          <p className=" text-gray-800">Quantity: {quantity}</p>
+          <p className=" text-gray-800">Quantity: x{quantity}</p>
           {children}
         </div>
       </div>

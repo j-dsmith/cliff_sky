@@ -35,7 +35,7 @@ const MiniCart: FC = ({}) => {
     >
       <h4 className="py-8 text-2xl font-semibold">Your Cart</h4>
       <MiniCartList />
-      <div className="w-full px-6 py-4">
+      <div className="w-full py-4 3xs:px-2 md:px-4">
         <div className="flex justify-between pb-8">
           <p className="mb-4 text-sm text-gray-600">
             <span>Subtotal </span> <span>(excl. shipping)</span>

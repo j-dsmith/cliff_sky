@@ -1,22 +1,41 @@
 import { FC } from "react";
 import Image from "next/image";
-import shopSrc from "@/../public/images/shop_banner_main.jpg";
-import { Poppins, Unbounded } from "next/font/google";
-import clsx from "clsx";
+import shopSrc from "@/../public/images/shop_banner.png";
+import { Unbounded } from "next/font/google";
+
 import Filters from "../Filters/Filters";
+import { cn } from "@/utils/utils";
+import Spacer from "@/components/UI/Spacer/Spacer";
 
 interface ShopHeaderProps {}
 
-// const unbounded = Poppins({ subsets: ["latin"], weight: ["500"] });
+const unbounded = Unbounded({ subsets: ["latin"], weight: ["500"] });
 
 const ShopHeader: FC<ShopHeaderProps> = ({}) => {
   return (
-    <div className="mx-auto flex flex-col items-center gap-16 pb-16 pt-20">
-      <div className="flex">
-        <h2 className={clsx("max-w-[80%] text-6xl font-semibold")}>
-          Cliff & Sky Shop. A collection of art and design projects.
+    <div className="mx-auto flex flex-col items-center pt-20 md:pt-16">
+      <div className="flex w-full flex-col gap-2">
+        <h2
+          className={cn(
+            "max-w-[80%] font-semibold 3xs:text-4xl md:text-5xl",
+            unbounded.className
+          )}
+        >
+          Shop
         </h2>
+        <p className="max-w-[24ch] font-medium text-gray-600 md:max-w-[32ch] md:text-lg">
+          A collection merchandise inspired by my art and design projects.
+        </p>
       </div>
+      <Spacer height="h-8 xs:h-6 md:h-8" />
+      <Image
+        src={shopSrc}
+        height={800}
+        width={1200}
+        alt="A digital design as shop page banner"
+        className="w-full rounded-xl"
+      />
+      <Spacer height="h-8 md:h-16" />
       <Filters />
       {/* <div className="flex items-center justify-center">
     

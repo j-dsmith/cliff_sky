@@ -4,4 +4,6 @@ export enum VariantNames {
   Hover = "hover",
   Open = "open",
   Closed = "closed",
+  Hidden = "hidden",
+  Visible = "visible",
 }

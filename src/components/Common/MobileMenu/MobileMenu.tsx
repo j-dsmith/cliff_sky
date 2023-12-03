@@ -5,6 +5,7 @@ import { useCycle } from "framer-motion";
 import MobileMenuBtn from "./MobileMenuBtn";
 import { usePageHeight } from "@/hooks/usePageHeight";
 import { VariantNames } from "@/types/VariantNames";
+import useMobileMenuStore from "@/stores/useMobileMenuStore";
 
 const MobileMenu = () => {
   const [isOpen, cycleIsOpen] = useCycle(
@@ -12,11 +13,16 @@ const MobileMenu = () => {
     VariantNames.Open
   );
 
+  const { toggleOpen: toggleMenuOpen } = useMobileMenuStore((state) => state);
+
   const pageHeight = usePageHeight();
   const pathname = usePathname();
 
   const handleClick = () => {
     document.body.classList.toggle("overflow-hidden");
+
+    toggleMenuOpen();
+
     cycleIsOpen();
   };
 
