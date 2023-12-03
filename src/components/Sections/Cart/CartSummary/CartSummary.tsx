@@ -17,8 +17,6 @@ const CartSummary: FC<CartSummaryProps> = ({}) => {
 
       if (!stripe) throw new Error("Stripe failed to initialize.");
 
-      console.log(cartDetails);
-
       const checkoutResponse = await fetch("/api/checkout_sessions", {
         method: "POST",
         headers: {

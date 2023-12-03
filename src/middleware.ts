@@ -11,6 +11,7 @@ export default authMiddleware({
     "/cart",
     "/products/(.*)",
     "/api/checkout_sessions",
+    "/orders-success",
   ],
 });
 

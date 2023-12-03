@@ -104,6 +104,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      dropShadow: {
+        "md-emerald": "0 0 0.25rem rgba(29, 209, 161, 0.5)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

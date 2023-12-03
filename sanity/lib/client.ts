@@ -7,4 +7,5 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
+  token: process.env.NEXT_PUBLIC_SANITY_ORDER_GENERATION_TOKEN,
 });

@@ -21,7 +21,7 @@ const CartAddToCart: FC<CartAddToCartProps> = ({ product }) => {
     setSelectedSize(size);
   };
 
-  const { addItem, cartDetails, clearCart } = useShoppingCart();
+  const { addItem } = useShoppingCart();
 
   const handleAddToCart = () => {
     addItem({
