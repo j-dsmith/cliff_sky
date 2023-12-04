@@ -9,7 +9,7 @@ type Props = {
   onBlur: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 };
 
-const inputClassName = "rounded-md bg-gray-200 px-5 py-4";
+const inputClassName = "rounded-xl bg-gray-200 px-5 py-4";
 
 const Input = (props: Props) => {
   return props.type === "textarea" ? (

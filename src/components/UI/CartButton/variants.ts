@@ -31,6 +31,10 @@ export const countVariants: Variants = {
 };
 
 export const cartButtonVariants: Variants = {
+  [VariantNames.Initial]: {
+    opacity: 0,
+    scale: 0,
+  },
   [VariantNames.Hidden]: {
     opacity: 0,
     scale: 0,

@@ -24,16 +24,13 @@ const ShopHeader: FC<ShopHeaderProps> = ({}) => {
           Shop
         </h2>
         <p className="max-w-[24ch] font-medium text-gray-600 md:max-w-[32ch] md:text-lg">
-          A collection merchandise inspired by my art and design projects.
+          A collection of merchandise inspired by my art and design projects.
         </p>
       </div>
       <Spacer height="h-8 xs:h-6 md:h-8" />
       <div className="h-16 w-full rounded-xl bg-gradient-to-r from-cs-mustard-300 to-cs-mustard-400" />
       <Spacer height="h-8 md:h-16" />
       <Filters />
-      {/* <div className="flex items-center justify-center">
-    
-      </div> */}
     </div>
   );
 };

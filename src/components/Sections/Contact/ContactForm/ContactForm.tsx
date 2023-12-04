@@ -99,7 +99,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="cursor-pointer rounded-md bg-black px-5 py-4 text-lg font-semibold text-white"
+        className="cursor-pointer rounded-xl bg-black px-5 py-4 text-lg font-semibold text-white"
       >
         Send Your Message
       </button>

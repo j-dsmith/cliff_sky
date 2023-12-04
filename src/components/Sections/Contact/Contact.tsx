@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <section
       className={clsx(
-        "grid grid-cols-1 gap-8 px-4 pt-16 md:h-[calc(100vh-96px)] md:grid-cols-2 md:gap-8 md:px-6 lg:gap-16",
+        "grid grid-cols-1 gap-8 pt-16 3xs:px-2 xs:px-4 md:h-[calc(100vh-96px)] md:grid-cols-2 md:gap-8 md:px-6 lg:px-8 2xl:gap-16",
         unbounded.className
       )}
     >

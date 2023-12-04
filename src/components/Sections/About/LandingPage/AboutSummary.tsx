@@ -12,7 +12,7 @@ type Props = {
 
 const AboutSummary = ({ bio }: Props) => {
   return (
-    <section className="px-4 pb-20 pt-12 md:px-6 lg:px-6 xl:px-8">
+    <section className="pb-20 pt-12 3xs:px-2 xs:px-4 md:px-6 lg:px-8 2xl:px-16">
       <SectionHeader textSegments={{ top: "About", bottom: "" }} />
       <Spacer height="h-8" />
 

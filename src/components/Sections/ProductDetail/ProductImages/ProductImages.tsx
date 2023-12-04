@@ -157,9 +157,6 @@ const ProductImages: FC<ProductImagesProps> = ({ product }) => {
           <div className="flex w-full overflow-x-scroll p-4 3xs:gap-2 md:gap-4">
             {renderDialogThumbnails()}
           </div>
-          {/* <ul className="flex max-w-full gap-3 overflow-x-scroll border border-indigo-500">
-            {renderDialogThumbnails()}
-          </ul> */}
         </DialogContent>
       </Dialog>
     </div>

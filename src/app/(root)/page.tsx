@@ -32,7 +32,7 @@ export default async function Home() {
       <Hero />
       <h2
         className={clsx(
-          "pb-20 pt-24 text-center text-lg text-gray-700 3xs:text-base xs:text-lg md:pb-32 md:pt-36 md:text-xl",
+          "pb-20 pt-24 text-center text-lg text-gray-700 3xs:px-2 3xs:text-base xs:px-4 xs:text-lg md:px-6 md:pb-32 md:pt-36 md:text-xl lg:px-8 2xl:px-16",
           unbounded.className
         )}
       >

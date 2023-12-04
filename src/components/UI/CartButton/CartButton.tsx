@@ -17,7 +17,6 @@ const CartButton: FC<CartButtonProps> = ({}) => {
 
   const { isOpen, toggleOpen, setIsOpen } = useMiniCartStore((state) => state);
   const { isOpen: menuOpen } = useMobileMenuStore((state) => state);
-
   const { cartCount } = useShoppingCart();
 
   /**
@@ -69,9 +68,10 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   return (
     <motion.button
       variants={cartButtonVariants}
+      initial={VariantNames.Initial}
       animate={controls}
       onClick={handleClick}
-      className="fixed bottom-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-black shadow-xl 3xs:right-2 md:right-4"
+      className="fixed bottom-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-cs-mustard-900 shadow-xl 3xs:right-2 md:right-4"
     >
       {!isOpen ? (
         <svg

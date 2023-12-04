@@ -13,7 +13,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       price_data: {
         currency: item.currency,
         product_data: {
-          name: item.name,
+          name: `${item.name} (${item.size.toUpperCase()})`,
           images: [item.image],
           metadata: {
             imageUrl: item.image,
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       success_url: `${headersList.get(
         "origin"
       )}/orders/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${headersList.get("origin")}/order-cancelled`,
+      cancel_url: `${headersList.get("origin")}/shop`,
     });
 
     return NextResponse.json({ sessionId: session.id });

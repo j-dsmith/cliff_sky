@@ -19,7 +19,7 @@ const Projects = ({ projects }: Props) => {
     <section className="pb-20 pt-12 md:pb-32">
       <SectionHeader
         textSegments={{ top: "Selected", bottom: "Projects" }}
-        className="px-4 md:px-6 lg:px-8"
+        className="3xs:px-2 xs:px-4 md:px-6 lg:px-8 2xl:px-16"
       />
       <Spacer height="h-8" />
       {renderProjects()}

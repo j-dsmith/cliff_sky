@@ -24,7 +24,7 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
           <p className="font-medium leading-tight 3xs:max-w-[16ch] 3xs:text-xs 2xs:text-sm">
             {name}
           </p>
-          <p className="rounded-lg border border-cs-mustard-200 bg-cs-mustard-100 p-1 font-medium text-cs-mustard-900 drop-shadow 3xs:text-xs 2xs:text-sm">
+          <p className="rounded-lg border border-cs-mustard-200 bg-cs-mustard-100 p-1 font-medium text-cs-mustard-900 3xs:text-xs 2xs:text-sm">
             {formattedPrice}
           </p>
         </div>
@@ -32,7 +32,11 @@ const MiniCartItem: FC<MiniCartItemProps> = ({ cartItem, children }) => {
           Size: <span className="uppercase">{size}</span>
         </p>
         <div className="flex justify-between">
-          <p className=" text-gray-800">Quantity: x{quantity}</p>
+          <p className=" text-gray-800">
+            Quantity:{" "}
+            <span className="text-xs font-medium text-gray-500">x</span>
+            <span className="font-medium">{quantity}</span>
+          </p>
           {children}
         </div>
       </div>

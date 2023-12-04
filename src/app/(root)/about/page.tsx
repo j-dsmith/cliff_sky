@@ -34,7 +34,7 @@ const AboutPage = async () => {
   return (
     <>
       <Preload />
-      <section className="px-4 pb-48 md:px-6 lg:px-8">
+      <section className="pb-48 3xs:px-2 xs:px-4 md:px-6 lg:px-8 2xl:px-16">
         <AboutHeader />
         <Spacer height="h-20" />
         <BioContent>{renderBioIntro()}</BioContent>

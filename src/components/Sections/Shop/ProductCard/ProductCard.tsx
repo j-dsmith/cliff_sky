@@ -33,7 +33,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <Link href={`/products/${_id}`}>
             <h3 className="font-bold ">{title}</h3>
           </Link>
-          <p className="rounded-xl border border-cs-mustard-300 bg-cs-mustard-200 px-2 py-1 font-medium text-cs-mustard-900">
+          <p className="rounded-xl border border-cs-mustard-200 bg-cs-mustard-100 px-2 py-1 font-medium text-cs-mustard-900">
             ${formattedPrice}
           </p>
         </div>
