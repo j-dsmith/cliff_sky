@@ -44,10 +44,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
           shipping_rate_data: {
             type: "fixed_amount",
             fixed_amount: {
-              amount: 0,
+              amount: 500,
               currency: "usd",
             },
-            display_name: "Free shipping",
+            display_name: "Standard shipping",
             delivery_estimate: {
               minimum: {
                 unit: "business_day",

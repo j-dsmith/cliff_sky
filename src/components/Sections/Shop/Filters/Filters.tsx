@@ -18,7 +18,11 @@ const Filters: FC<FiltersProps> = async ({}) => {
     });
   };
 
-  return <ul className="row-start-2 w-full">{renderCategoryFilters()}</ul>;
+  return (
+    <ul className="row-start-2 flex w-full items-baseline gap-4">
+      {renderCategoryFilters()}
+    </ul>
+  );
 };
 
 export default Filters;

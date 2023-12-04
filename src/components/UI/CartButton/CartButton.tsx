@@ -48,7 +48,7 @@ const CartButton: FC<CartButtonProps> = ({}) => {
     }
     //? This ensures that the animation only runs once
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pathname]);
 
   // this effect handles the animation when the mobile menu is opened or closed
   useEffect(() => {

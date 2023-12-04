@@ -28,7 +28,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           />
         </div>
       </Link>
-      <div className="flex flex-col py-2">
+      <div className="flex flex-1 flex-col py-2">
         <div className="flex items-baseline justify-between gap-8 3xs:text-lg md:text-xl">
           <Link href={`/products/${_id}`}>
             <h3 className="font-bold ">{title}</h3>
@@ -39,7 +39,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </div>
         <Spacer height="h-1" />
         <p className="capitalize">{color}</p>
-        <Spacer height="h-4" />
+        <Spacer height="h-4" className="mt-auto" />
 
         <CardAddToCart product={product} />
       </div>
