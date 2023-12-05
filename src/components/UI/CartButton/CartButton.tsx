@@ -23,22 +23,24 @@ const CartButton: FC<CartButtonProps> = ({}) => {
    * Handle animation effects
    */
 
-  // This effect closes the mini cart when the route changes
   useEffect(() => {
-    setIsOpen(false);
-  }, [setIsOpen, pathname]);
+    controls.start(VariantNames.Animate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
       controls.start(VariantNames.Hidden);
     } else if (isOpen) {
       controls.start(VariantNames.Open);
-    } else if (cartCount && pathname !== "/cart") {
-      controls.start(VariantNames.Animate);
     } else {
       controls.start(VariantNames.Closed);
     }
-  }, [isOpen, cartCount, pathname, menuOpen, controls]);
+  }, [controls, isOpen, menuOpen, pathname]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [setIsOpen, pathname]);
 
   if (pathname === "/cart" || !cartCount) return null;
 
@@ -49,7 +51,6 @@ const CartButton: FC<CartButtonProps> = ({}) => {
   return (
     <motion.button
       variants={cartButtonVariants}
-      initial={VariantNames.Initial}
       animate={controls}
       onClick={handleClick}
       className="fixed bottom-4 z-cartBtn grid h-16 w-16 place-items-center rounded-full border border-cs-mustard-300 bg-cs-mustard-200 text-cs-mustard-900 drop-shadow-md 3xs:right-2 md:right-4"

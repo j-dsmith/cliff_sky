@@ -52,7 +52,7 @@ export const cartButtonVariants: Variants = {
       duration: 0.3,
     },
   },
-  [VariantNames.Visible]: {
+  [VariantNames.Closed]: {
     opacity: 1,
     scale: 1,
     transition: {
