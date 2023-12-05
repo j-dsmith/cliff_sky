@@ -22,8 +22,10 @@ const MiniCart: FC = ({}) => {
   useEffect(() => {
     if (isOpen) {
       controls.start(VariantNames.Open);
+      document.body.classList.add("3xs:overflow-hidden", "md:overflow-auto");
     } else {
       controls.start(VariantNames.Initial);
+      document.body.classList.remove("3xs:overflow-hidden", "md:overflow-auto");
     }
   }, [controls, isOpen]);
 
