@@ -17,7 +17,7 @@ const MiniCart: FC = ({}) => {
       style: "currency",
       currency: "USD",
     });
-  const { isOpen } = useMiniCartStore((state) => state);
+  const { isOpen, setIsOpen } = useMiniCartStore((state) => state);
 
   useEffect(() => {
     if (isOpen) {
@@ -31,12 +31,13 @@ const MiniCart: FC = ({}) => {
     console.log(cartCount);
     if (cartCount === 0) {
       controls.start(VariantNames.Initial);
+      setIsOpen(false);
     }
-  }, [cartCount, controls]);
+  }, [cartCount, controls, setIsOpen]);
 
   return (
     <motion.div
-      initial="initial"
+      initial={VariantNames.Initial}
       animate={controls}
       variants={slideoutVariants}
       className="fixed z-miniCart flex flex-col items-center rounded-2xl border border-gray-300 bg-white drop-shadow-md 3xs:inset-1 3xs:w-[calc(100%-8px)] md:inset-[unset] md:bottom-1 md:right-1 md:top-1 md:w-1/2 lg:w-[40vw] xl:w-1/3"

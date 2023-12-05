@@ -25,39 +25,20 @@ const CartButton: FC<CartButtonProps> = ({}) => {
 
   // This effect closes the mini cart when the route changes
   useEffect(() => {
-    const handleRouteChange = () => {
-      setIsOpen(false);
-    };
-
-    handleRouteChange();
+    setIsOpen(false);
   }, [setIsOpen, pathname]);
 
-  // This effect handles animations when the mini cart is opened or closed
-  useEffect(() => {
-    if (isOpen) {
-      controls.start(VariantNames.Open);
-    } else {
-      controls.start(VariantNames.Closed);
-    }
-  }, [isOpen, controls]);
-
-  // this effect handles the initial animation when the cart count is greater than 0
-  useEffect(() => {
-    if (cartCount && !isOpen) {
-      controls.start(VariantNames.Animate);
-    }
-    //? This ensures that the animation only runs once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
-
-  // this effect handles the animation when the mobile menu is opened or closed
   useEffect(() => {
     if (menuOpen) {
       controls.start(VariantNames.Hidden);
+    } else if (isOpen) {
+      controls.start(VariantNames.Open);
+    } else if (cartCount && pathname !== "/cart") {
+      controls.start(VariantNames.Animate);
     } else {
-      controls.start(VariantNames.Visible);
+      controls.start(VariantNames.Closed);
     }
-  }, [menuOpen, controls]);
+  }, [isOpen, cartCount, pathname, menuOpen, controls]);
 
   if (pathname === "/cart" || !cartCount) return null;
 
