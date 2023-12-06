@@ -22,8 +22,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
           <Image
             src={urlForImage(images[0].asset).url()}
             alt=""
-            width={500}
-            height={500}
+            fill
             className="absolute object-cover object-center"
           />
         </div>
