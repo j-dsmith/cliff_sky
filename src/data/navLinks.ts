@@ -8,10 +8,6 @@ export const navLinks = [
     label: "About",
   },
   {
-    href: "/painting",
-    label: "Painting",
-  },
-  {
     href: "/shop",
     label: "Shop",
   },
